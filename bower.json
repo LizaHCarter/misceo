@@ -1,11 +1,11 @@
 {
-  "name": "meanr",
+  "name": "misceo",
   "version": "0.0.0",
-  "homepage": "https://github.com/nss-cohort-2014-06-07/meanr",
+  "homepage": "https://github.com/lizahcarter/misceo",
   "authors": [
-    "Chyld Medford <chyld.medford@gmail.com>"
+    "Adam Barnhard", "Mikey Badr", "Liza Carter", "Melanie Fryman", "Logan Richardson", "Nathan Vasquez"
   ],
-  "description": "The MEAN Template",
+  "description": "Web crawling application for finding and sharing images",
   "license": "MIT",
   "dependencies": {
   }
