@@ -1,6 +1,6 @@
 'use strict';
 
-var User = require('../models/user');
+var User = require('../../models/user');
 
 exports.register = function(req, res){
   User.register(req.body, function(err, user){
