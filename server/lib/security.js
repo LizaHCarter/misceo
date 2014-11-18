@@ -1,15 +1,15 @@
 'use strict';
 
-var User = require('../models/user');
+var Bcrypt = require('bcrypt'),
+    User   = require('../models/user');
 
-exports.authenticate = function(req, res, next){
-  User.findById(req.session.userId, function(err, user){
-    if(user){
-      req.user = user;
-      next();
-    }else{
-      res.status(401).end();
+module.exports = function(username, password, callback){
+    var user = users[username];
+    if(!user){
+        return callback(null, false);
     }
-  });
-};
 
+    Bcrypt.compare(password, user.password, function(err, isValid){
+        callback(err, isValid, { id: user.id, name: user.name });
+    });
+};
