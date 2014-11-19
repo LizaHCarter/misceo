@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr', ['ui.router', 'LocalForageModule'])
+  angular.module('misceo', ['ui.router', 'LocalForageModule'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$localForageProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $localForageProvider){
     $urlRouterProvider.otherwise('/');
 
@@ -11,7 +11,7 @@
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
 
-    $localForageProvider.config({name:'meanr', storeName:'cache', version:1.0});
+    $localForageProvider.config({name:'misceo', storeName:'cache', version:1.0});
     $httpProvider.interceptors.push('HttpInterceptor');
   }])
   .run(['User', function(User){}]);
