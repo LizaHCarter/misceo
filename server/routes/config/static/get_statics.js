@@ -6,7 +6,7 @@ module.exports = {
     tags:['static'],
     handler: {
         directory: {
-            path: __dirname + '/../../../public'
+            path: __dirname + '/../../../../public'
         }
     }
 };
