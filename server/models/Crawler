@@ -21,7 +21,9 @@ Crawler.methods.crawl = function(name, baseUrl, depth){
             // $ is cheerio
             // hash(url w/o params or http://www), push into array
             // use jquery selector to find all images
-            $('img').attr('src').each(function(){});
+            $('img').attr('src').each(function(){
+
+            });
             // encode as base 64 stings, push to array w/ associated data
 
             // check each anchor tag href against existing arrays, if not then add to que
