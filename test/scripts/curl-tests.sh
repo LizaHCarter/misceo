@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo -e "\nhome page"
+curl -s 127.0.0.1:3000
+
+echo -e "\ncreate priority"
+curl -s -X POST -H "Content-Type: application/json" -d '{"name":"test", "password":"1234", "email":"bob@aol.com"}' 127.0.0.1:3000/register

@@ -1,13 +1,27 @@
 'use strict';
 
-var User = require('../../models/user');
+var User = require('../../models/user'),
+    Joi = require('joi');
 
-exports.register = function(req, res){
-    User.register(req.body, function(err, user){
-        if(user){
-            res.status(200).end();
-        }else{
-            res.status(400).end();
+module.exports = {
+    description: 'Register',
+    notes: 'Route to register a new user',
+    tags: ['register'],
+    validate: {
+        payload: {
+            name: Joi.string().min(1).required(),
+            password: Joi.string().min(3).required(),
+            email: Joi.string().required()
         }
-    });
+    },
+    handler: function(request, reply){
+        User.registerUser(request.payload, function(err, user){
+            if(user){
+                reply(user);
+            }else{
+                reply('There was an error');
+            }
+        });
+    }
 };
+
