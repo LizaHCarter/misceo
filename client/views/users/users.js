@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
+  angular.module('misceo')
   .controller('UsersCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
     $('#email').focus();
     $scope.user = {};

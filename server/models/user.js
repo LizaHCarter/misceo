@@ -12,7 +12,7 @@ var mongoose   = require('mongoose'),
 
 UserSchema.statics.registerUser = function(o, cb){
     this.findOne({email: o.email}, function(err, user){
-        if(user || o.password.length < 3 || err){return cb('Failed to register user' + err.toString());}
+        if(user || o.password.length < 3 || err){return cb('Failed to register user');}
         o.password = bcrypt.hashSync(o.password, 10);
         user = new this(o);
         user.save(function(err){
