@@ -17,3 +17,23 @@
         li: a(ui-sref='home') Home
         li: a(ui-sref='logout') {{email}}
 
+.off-canvas-wrap(data-offcanvas='data-offcanvas')
+    .inner-wrap
+        nav.tab-bar
+          section.left-small
+            a.left-off-canvas-toggle.menu-icon(href='#')
+              span
+          section.middle.tab-bar-section
+            h1.title Misceo
+        aside.left-off-canvas-menu
+          ul.off-canvas-list
+            li
+              a(href='#') Profile
+            li
+              a(href='#') Inbox
+            li
+              a(href='#') Crawl
+        section.main-section
+          //
+             content goes here 
+        a.exit-off-canvas
