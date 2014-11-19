@@ -1,39 +1,22 @@
-.navbar.navbar-default(role='navigation')
-  .container
-    .navbar-header
-      button.navbar-toggle(data-toggle='collapse', data-target='#bs-navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/') MEANr Template
+.snap-drawer
+  ul.nav.navbar-nav#navigation(ng-hide='email', role=navigation)
+    li
+      a(ui-sref='/'): i.fa.fa-fw.fa-home &nbsp home
+    li
+      a(ui-sref='/#/login'): i.fa.fa-fw.fa-sign-in &nbsp login
+    li
+      a(ui-sref='/#/register'): i.fa.fa-fw.fa-hand-o-right &nbsp register
 
-    .collapse.navbar-collapse#bs-navbar-collapse
-      ul.nav.navbar-nav.navbar-right(ng-hide='email')
-        li: a(ui-sref='home') Home
-        li: a(ui-sref='register') Register
-        li: a(ui-sref='login') Login
-      ul.nav.navbar-nav.navbar-right(ng-show='email')
-        li: a(ui-sref='home') Home
-        li: a(ui-sref='logout') {{email}}
-
-.off-canvas-wrap(data-offcanvas='data-offcanvas')
-    .inner-wrap
-        nav.tab-bar
-          section.left-small
-            a.left-off-canvas-toggle.menu-icon(href='#')
-              span
-          section.middle.tab-bar-section
-            h1.title Misceo
-        aside.left-off-canvas-menu
-          ul.off-canvas-list
-            li
-              a(href='#') Profile
-            li
-              a(href='#') Inbox
-            li
-              a(href='#') Crawl
-        section.main-section
-          //
-             content goes here 
-        a.exit-off-canvas
+  ul.nav.navbar-nav#navigation(ng-show='email')
+    li
+      a(ui-sref='#'): i.fa.fa-fw.fa-star &nbsp &nbsp Misceo
+    li
+      a(ui-sref='/#/home'): i.fa.fa-fw.fa-home &nbsp home
+    li
+      a(ui-sref='/#/logout'): i.fa.fa-fw.fa-sign-out &nbsp logout
+    li
+      a(ui-sref='/#/profile'): i.fa.fa-fw.fa-user &nbsp profile
+    li
+      a(ui-sref='/#/inbox'): i.fa.fa-fw.fa-envelope &nbsp inbox
+    li
+      a(ui-sref='/#/inbox'): i.fa.fa-fw.fa-heart &nbsp crawls
