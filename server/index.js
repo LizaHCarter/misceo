@@ -1,7 +1,7 @@
 'use strict';
 
 var Hapi     = require('hapi'),
-    server   = new Hapi.Server(process.env.PORT),
+    server   = new Hapi.Server('0.0.0.0', process.env.PORT),
     routes   = require('./routes/routes'),
     plugins  = require('./lib/plugins'),
     mongoose = require('mongoose').connect(process.env.DB);
