@@ -1,15 +1,16 @@
 'use strict';
 
-var Bcrypt = require('bcrypt'),
+var bcrypt = require('bcrypt'),
     User   = require('../models/user');
 
 module.exports = function(username, password, callback){
-    var user = user[username];
-    if(!user){
-        return callback(null, false);
-    }
-
-    Bcrypt.compare(password, user.password, function(err, isValid){
-        callback(err, isValid, {id: user.id, name: user.name});
+    User.findOne({email: username}, function(err, user){
+        if(!user){
+            return callback(null, false);
+        }
+        bcrypt.compare(password, user.password, function(err, isValid){
+            callback(err, isValid, {id: user._id, name: user.name});
+        });
     });
 };
+
