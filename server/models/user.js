@@ -20,7 +20,14 @@ UserSchema.statics.registerUser = function(o, cb){
         });
     }.bind(this));
 };
-
+UserSchema.statics.authenticate = function(o, cb){
+    this.findOne({email: o.email}, function(err, user){
+        if(!user){ return cb();}
+        var isOk = bcrypt.compareSync(o.password, user.password);
+        if(!isOk){return cb();}
+        cb(user);
+    }.bind(this));
+};
 function nameV(v){
     return v.length > 0;
 }

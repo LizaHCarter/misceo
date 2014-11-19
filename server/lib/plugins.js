@@ -14,6 +14,6 @@ module.exports = [
         plugin: require('lout')
     },
     {
-        plugin: require('hapi-auth-basic')
+        plugin: require('hapi-auth-cookie')
     }
 ];
