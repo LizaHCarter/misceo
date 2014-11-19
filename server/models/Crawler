@@ -29,6 +29,9 @@ Crawler.methods.crawl = function(name, baseUrl, depth){
             // check each anchor tag href against existing arrays, if not then add to que
             $('a').each(function(){});
             // repeat for depth
+
+
+            //https://gist.github.com/DSRoden/d909c265f2dda24879b3
         }
     });
 
