@@ -10,8 +10,8 @@ h2#profileh2 {{mode | uppercase}}
               dl.dl-horizontal
                 dt Name
                 dd
-                  p(ng-hide='editMode') {{user.alias}}
-                  input(ng-show='editMode' type='text' ng-model='user.alias' required)
+                  p(ng-hide='editMode') {{user.name}}
+                  input(ng-show='editMode' type='text' ng-model='user.name' required)
                 dt Profile Picture
                 dd
                   img(ng-hide='editMode' src='{{user.profilePic}}' style='width: 250px')
