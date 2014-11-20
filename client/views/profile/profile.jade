@@ -27,7 +27,7 @@ h2#profileh2 {{mode | uppercase}}
                 p(ng-hide='editMode') {{user.bio}}
                 textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
               dt Email:
-              dd {{email}}
+              dd {{user.email}}
   .row
     .small-5.columns
     .small-2.columns

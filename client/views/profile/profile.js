@@ -5,7 +5,6 @@
   .controller('ProfileCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
     $scope.mode = $state.current.name;
     $scope.editMode = false;
-    $scope.email = .email;
 
     //if(!$scope.User.hasEdited){
     //  $scope.editMode = true;
