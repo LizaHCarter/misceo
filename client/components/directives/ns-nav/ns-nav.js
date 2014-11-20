@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
+  angular.module('misceo')
   .directive('nsNav', [function(){
     var o = {};
 

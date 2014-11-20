@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
+  angular.module('misceo')
   .factory('User', ['$rootScope', '$http', '$localForage', function($rootScope, $http, $localForage){
     var _email;
 
@@ -45,8 +45,12 @@
       });
     }
 
+    function updateProfile(user){
+      return $http.put('/profile', user);
+    }
+
     getEmailFromStorage();
 
-    return {getEmail:getEmail, setEmail:setEmail, register:register, login:login, logout:logout, getEmailFromStorage:getEmailFromStorage};
+    return {getEmail:getEmail, setEmail:setEmail, register:register, login:login, logout:logout, getEmailFromStorage:getEmailFromStorage, updateProfile:updateProfile};
   }]);
 })();

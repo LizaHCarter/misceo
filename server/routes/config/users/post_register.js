@@ -1,6 +1,6 @@
 'use strict';
 
-var User = require('../../models/user'),
+var User = require('../../../models/user'),
     Joi = require('joi');
 
 module.exports = {
@@ -14,12 +14,15 @@ module.exports = {
             email: Joi.string().required()
         }
     },
+    auth: {
+        mode: 'try'
+    },
     handler: function(request, reply){
         User.registerUser(request.payload, function(err, user){
             if(user){
                 reply(user);
             }else{
-                reply('There was an error');
+                reply().code(err ? 401 : 200);
             }
         });
     }
