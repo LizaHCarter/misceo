@@ -14,13 +14,13 @@
       $scope.editMode = !$scope.editMode;
     };
 
-    //$scope.updateProfile = function(){
-     // $scope.editMode = false;
-     // $scope.User.hasEdited = true;
+    $scope.updateProfile = function(){
+      $scope.editMode = false;
+      $scope.User.hasEdited = true;
 
-      //User.updateProfile($scope.User).then(function(res){
-      //  toastr.success('Your profile has been saved');
-      //});
-   // };
+      User.updateProfile($scope.User).then(function(res){
+        toastr.success('Your profile has been saved');
+      });
+    };
   }]);
 })();

@@ -1,5 +1,5 @@
 h2#profileh2 {{mode | uppercase}}
-.row(ng-hide='user')
+.row
     form(role='form', novalidate, name='editForm')
       .row
         .small-1.columns
@@ -31,7 +31,7 @@ h2#profileh2 {{mode | uppercase}}
               dt Bio:
               dd
                 p(ng-hide='editMode') {{user.bio}}
-                textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='currentUser.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
+                textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
               dt Location
                 dd
                   span(ng-hide='editMode') City: {{user.city}}
