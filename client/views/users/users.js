@@ -5,6 +5,10 @@
   .controller('UsersCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
     $scope.user = {};
     $scope.mode = $state.current.name;
+    $scope.hideUsername = false;
+    if($scope.mode === 'login'){
+      $scope.hideUsername = true;
+    }
 
     $scope.submit = function(){
       if($scope.mode === 'register'){
