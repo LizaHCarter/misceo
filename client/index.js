@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('misceo', ['ui.router', 'mm.foundation', 'snap', 'LocalForageModule'])
+  angular.module('misceo', ['ui.router', 'mm.foundation', 'LocalForageModule'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$localForageProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $localForageProvider){
     $urlRouterProvider.otherwise('/');
 
@@ -16,4 +16,3 @@
   }])
   .run(['User', function(User){}]);
 })();
-
