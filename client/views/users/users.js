@@ -20,7 +20,6 @@
           $scope.user = {};
         });
       }else{
-        $scope.register = true;
         User.login($scope.user).then(function(response){
           toastr.success('User successfully authenticated.');
           $state.go('home');
