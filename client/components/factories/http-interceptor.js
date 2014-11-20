@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('meanr')
+  angular.module('misceo')
   .factory('HttpInterceptor', ['$rootScope', '$q', function($rootScope, $q){
 
     function request(req){
