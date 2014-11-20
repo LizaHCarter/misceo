@@ -1,14 +1,20 @@
 doctype html
-html(ng-app='misceo', lang='en')
+//if IE 9
+  html.lt-ie10(lang='en')  
+html.no-js(ng-app='misceo', lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title misceo
-    include views/master/stylesheets
-  body
-    div(ns-nav)
-    include views/master/body
-    include views/master/footer
-    include views/master/scripts
-
+    //- this points to the stylesheet partial
+    include views/shared/stylesheets
+  
+   body
+    include views/nav/nav
+    include views/shared/body
+    include views/footer/footer
+         
+         
+    //- this points to the scripts partial
+    include views/shared/scripts
