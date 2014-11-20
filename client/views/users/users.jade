@@ -1,7 +1,7 @@
 h4 {{mode | uppercase}}
 
 .row
-  .col-xs-3
+  .large-4.medium-4.small-4.columns
     form(role='form', novalidate, name='userForm')
       .form-group
         label(for='email') Email
@@ -11,5 +11,7 @@ h4 {{mode | uppercase}}
         input.form-control#password(type='password', name='password', ng-model='user.password', required, ng-minlength='3')
       .form-group
         button.btn.btn-primary(ng-click='submit()') Submit
-  .col-xs-9
+  .large-4.medium-4.small-4.columns
+  .large-4.medium-4.small-4.columns
+  .large-4.medium-4.small-4.columns
 

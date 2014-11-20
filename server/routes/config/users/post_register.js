@@ -14,12 +14,15 @@ module.exports = {
             email: Joi.string().required()
         }
     },
+    auth: {
+        mode: 'try'
+    },
     handler: function(request, reply){
         User.registerUser(request.payload, function(err, user){
             if(user){
                 reply(user);
             }else{
-                reply('There was an error');
+                reply().code(err ? 401 : 200);
             }
         });
     }
