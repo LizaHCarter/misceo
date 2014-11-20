@@ -12,12 +12,10 @@ h2#profileh2 {{mode | uppercase}}
                 dd
                   img(ng-hide='editMode' src='{{user.profilePic}}' style='width: 250px')
                   input(ng-show='editMode' type='text' ng-model='user.profilePic' required)
-                dt Username
+                dt Username:
                 dd
                   p(ng-hide='editMode') {{user.name}}
                   input(ng-show='editMode', type='text', ng-model='user.name')
-                dt Email
-                dd {{user.email}}
         .small-2.columns
         .small-4.columns
           .panel.panel-info
@@ -28,6 +26,8 @@ h2#profileh2 {{mode | uppercase}}
               dd
                 p(ng-hide='editMode') {{user.bio}}
                 textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
+              dt Email:
+              dd {{email}}
   .row
     .small-5.columns
     .small-2.columns
