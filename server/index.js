@@ -6,7 +6,6 @@ var Hapi     = require('hapi'),
     plugins  = require('./lib/plugins'),
     mongoose = require('mongoose').connect(process.env.DB);
 
-server.route(routes);
 
 mongoose.connection.once('open', function(){
     server.pack.register(plugins, function(){
@@ -15,6 +14,7 @@ mongoose.connection.once('open', function(){
             cookie: 'session',
             isSecure: false
         });
+        server.route(routes);
         server.start(function(){
             server.log('info', 'Server running at: ' + server.info.uri);
         });
