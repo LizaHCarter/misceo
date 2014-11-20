@@ -13,13 +13,16 @@ module.exports = {
             email: Joi.string().required()
         }
     },
+    auth: {
+        mode: 'try'
+    },
     handler: function(request, reply){
         User.authenticate(request.payload, function(user){
             if(user){
                 request.auth.session.set(user);
-                reply(request.auth.session);
+                reply();
             }else{
-                reply('There was an error');
+                reply().code(401);
             }
         });
     }

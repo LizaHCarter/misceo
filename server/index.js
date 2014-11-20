@@ -9,15 +9,11 @@ var Hapi     = require('hapi'),
 server.route(routes);
 
 mongoose.connection.once('open', function(){
-    server.pack.register(plugins, function(err){
-        if(err){throw err;}
-        server.auth.strategy('session', 'cookie', {
+    server.pack.register(plugins, function(){
+        server.auth.strategy('session', 'cookie', true, {
             password: 'secret',
             cookie: 'session',
-            redirectTo: false,
-            isSecure: false,
-            ttl: 3 * 24 * 60 * 60 * 1000,
-            validateFunc: require('./lib/security')
+            isSecure: false
         });
         server.start(function(){
             server.log('info', 'Server running at: ' + server.info.uri);

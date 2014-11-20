@@ -9,6 +9,6 @@ module.exports = {
     tags: ['logout'],
     handler: function(request, reply){
         request.auth.session.clear();
-        reply('logged out');
+        reply();
     }
 };
