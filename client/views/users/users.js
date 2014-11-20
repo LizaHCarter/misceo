@@ -5,6 +5,7 @@
   .controller('UsersCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
     $scope.user = {};
     $scope.mode = $state.current.name;
+    $scope.register = false;
 
     $scope.submit = function(){
       if($scope.mode === 'register'){
@@ -16,6 +17,7 @@
           $scope.user = {};
         });
       }else{
+        $scope.register = true;
         User.login($scope.user).then(function(response){
           toastr.success('User successfully authenticated.');
           $state.go('home');
