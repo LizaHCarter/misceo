@@ -12,6 +12,7 @@
                       $scope.$on('email', function(e, email){
                         $scope.email = email;
                       });
+                      User.getEmailFromStorage();
                     }];
     return o;
   }]);
