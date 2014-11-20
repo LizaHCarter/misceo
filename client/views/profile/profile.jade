@@ -1,62 +1,53 @@
 h2#profileh2 {{mode | uppercase}}
-.row(ng-hide="email")
-  .large-12.columns
+.row
     form(role='form', novalidate, name='editForm')
       .row
-        .large-1.medium-1.small-1.columns
-        .large-4.medium-4.small-4.columns
-          .row
-            .large-12.columns
-              .panel.panel-info
-                .panel-heading
-                .panel-body
-                  dl.dl-horizontal
-                    dt Nickname
-                    dd
-                      p(ng-hide='editMode') {{currentUser.alias}}
-                      input(ng-show='editMode' type='text' ng-model='currentUser.alias' required)
-                    dt Profile Picture
-                    dd
-                      img(ng-hide='editMode' src='{{currentUser.profilePic}}' style='width: 250px')
-                      input(ng-show='editMode' type='text' ng-model='currentUser.profilePic' required)
-                    dt Name
-                    dd
-                      p(ng-hide='editMode') {{currentUser.name}}
-                      input(ng-show='editMode', type='text', ng-model='currentUser.name')
-                    dt Age
-                    dd
-                      p(ng-hide='editMode') {{currentUser.age}}
-                      input(ng-show='editMode', type='number', ng-model='currentUser.age')
-                    dt Email
-                    dd {{currentUser.email}}
-        .large-2.medium-2.small-2.columns
-        .large-4.medium-4.small-4.columns
-          .row
-            .large-12.columns
-              .panel.panel-info
-                .panel-heading
-                .panel-body
-                  dl.dl-horizontal
-                  dt Bio:
-                  dd
-                    p(ng-hide='editMode') {{currentUser.bio}}
-                    textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='currentUser.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
-                  dt Location
-                    dd
-                      span(ng-hide='editMode') City: {{currentUser.city}}
-                      br
-                      input(ng-show='editMode', type='text', ng-model='currentUser.city', required, placeholder='City')
-                      span(ng-hide='editMode') State: {{currentUser.state}}
-                      br
-                      input(ng-show='editMode', type='text', ng-model='currentUser.state', required, placeholder='State')
-                      span(ng-hide='editMode') Zipcode: {{currentUser.zip}}
-                      br
-                      input(ng-show='editMode', type='text', ng-model='currentUser.zip', required, ng-minlength='5', ng-maxlength='5', ng-pattern='/^[0-9]+/', placeholder='Zipcode')
-        .large-1.medium-1.small-1.columns
+        .small-1.columns
+        .small-4.columns
+          .panel.panel-info
+            .panel-heading
+            .panel-body
+              dl.dl-horizontal
+                dt Name
+                dd
+                  p(ng-hide='editMode') {{user.alias}}
+                  input(ng-show='editMode' type='text' ng-model='user.alias' required)
+                dt Profile Picture
+                dd
+                  img(ng-hide='editMode' src='{{user.profilePic}}' style='width: 250px')
+                  input(ng-show='editMode' type='text' ng-model='user.profilePic' required)
+                dt Username
+                dd
+                  p(ng-hide='editMode') {{user.name}}
+                  input(ng-show='editMode', type='text', ng-model='user.name')
+                dt Email
+                dd {{user.email}}
+        .small-2.columns
+        .small-4.columns
+          .panel.panel-info
+            .panel-heading
+            .panel-body
+              dl.dl-horizontal
+              dt Bio:
+              dd
+                p(ng-hide='editMode') {{user.bio}}
+                textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
+              dt Location
+                dd
+                  span(ng-hide='editMode') City: {{user.city}}
+                  br
+                  input(ng-show='editMode', type='text', ng-model='user.city', required, placeholder='City')
+                  span(ng-hide='editMode') State: {{user.state}}
+                  br
+                  input(ng-show='editMode', type='text', ng-model='user.state', required, placeholder='State')
+                  span(ng-hide='editMode') Zipcode: {{user.zip}}
+                  br
+                  input(ng-show='editMode', type='text', ng-model='user.zip', required, ng-minlength='5', ng-maxlength='5', ng-pattern='/^[0-9]+/', placeholder='Zipcode')
+        .small-1.columns
   .row
-    .large-4.medium-4.small-4.columns
-    .large-2.medium-2.small-2.columns
+    .small-5.columns
+    .small-2.columns
       button.btn#editButton(style='width: 200px;' ng-hide='editMode', ng-click='startEditMode()') Edit Profile
       button.btn#saveButton(ng-show='editMode && editForm.$valid', ng-click='updateProfile()') Save
-    .large-6.medium-6.small-6.columns
+    .small-5.columns
 
