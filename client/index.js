@@ -8,6 +8,7 @@
     $stateProvider
     .state('home',     {url:'/',         templateUrl:'/views/home/home.html', controller:'HomeCtrl'})
     .state('profile',  {url:'/profile',  templateUrl:'/views/profile/profile.html', controller:'ProfileCtrl'})
+    .state('crawl',    {url:'/search',   templateUrl:'/views/crawls/search_crawl.html', controller:'SearchCrawlCtrl'})
     .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});

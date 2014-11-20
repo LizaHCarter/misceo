@@ -6,19 +6,19 @@
     $scope.mode = $state.current.name;
     $scope.editMode = false;
 
-    //if(!$scope.currentUser.hasEdited){
+    //if(!$scope.User.hasEdited){
     //  $scope.editMode = true;
     //}
-//
+
     $scope.startEditMode = function(){
       $scope.editMode = !$scope.editMode;
     };
-//
+
     //$scope.updateProfile = function(){
      // $scope.editMode = false;
-     // $scope.currentUser.hasEdited = true;
+     // $scope.User.hasEdited = true;
 
-      //User.updateProfile($scope.currentUser).then(function(res){
+      //User.updateProfile($scope.User).then(function(res){
       //  toastr.success('Your profile has been saved');
       //});
    // };
