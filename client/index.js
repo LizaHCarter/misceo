@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('misceo', ['ui.router', 'mm.foundation', 'LocalForageModule'])
+  angular.module('misceo', ['ui.router', 'LocalForageModule'])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$localForageProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $localForageProvider){
     $urlRouterProvider.otherwise('/');
 
@@ -9,6 +9,7 @@
     .state('home',     {url:'/',         templateUrl:'/views/home/home.html', controller:'HomeCtrl'})
     .state('profile',  {url:'/profile',  templateUrl:'/views/profile/profile.html', controller:'ProfileCtrl'})
     .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
+    .state('webcam',   {url:'/webcam',   templateUrl:'/views/webcam/webcam.html', controller:'WebcamCtrl'})
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
 
