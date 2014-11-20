@@ -16,10 +16,10 @@ module.exports = {
         }
     },
     auth: {
-        mode: true
+        mode: 'required'
     },
-    handler: function(request, reply) {
-        User.findOneAndUpdate({_id: request.auth.credentials._id}, request.payload, function (err, user) {
+    handler: function(request, reply){
+        User.findOneAndUpdate({_id: request.auth.credentials._id}, request.payload, function(err, user){
             if (err || !user) {
                 return reply().code(500);
             }
