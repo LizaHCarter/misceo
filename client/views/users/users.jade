@@ -1,17 +1,23 @@
-h4 {{mode | uppercase}}
-
+h1 {{mode | uppercase}}
 .row
-  .large-4.medium-4.small-4.columns
-    form(role='form', novalidate, name='userForm')
-      .form-group
-        label(for='email') Email
-        input.form-control#email(type='email', name='email', ng-model='user.email', autofocus, required)
-      .form-group
-        label(for='password') Password
-        input.form-control#password(type='password', name='password', ng-model='user.password', required, ng-minlength='3')
-      .form-group
-        button.btn.btn-primary(ng-click='submit()') Submit
-  .large-4.medium-4.small-4.columns
-  .large-4.medium-4.small-4.columns
-  .large-4.medium-4.small-4.columns
-
+  .small-12.columns
+    form
+      .row
+        .small-6.columns
+          label(for='email') Email
+          input#name(type='text', name='email', ng-model='user.email', autofocus)
+        .small-6.columns
+      .row(ng-hide='!register')
+        .small-6.columns
+          label(for='name') Username
+          input#name(type='text', name='name', ng-model='user.name', autofocus)
+        .small-6.columns
+      .row
+        .small-6.columns
+          label(for='password') Password
+          input#password(type='password', name='password', ng-model='user.password')
+        .small-6.columns
+    .row
+      .small-6.columns
+        button(ng-click='submit()') Submit
+      .small-6.columns
