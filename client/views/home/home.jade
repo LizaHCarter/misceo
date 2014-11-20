@@ -26,13 +26,13 @@ body(id='')
       nav.eight.columns.toggle-jump.main-nav
         ul.nav.right
           li.features
-            a(href='/features') Features
+            a(href='#') Blah
           li.pricing
-            a(href='/subscribe/plans?trial=yes') Pricing
+            a(href='#') Blah
           li
-            a.featurette(data-featurette='modal-trigger', data-mobile-fallback='doit', data-target='login-modal', href='https://teamtreehouse.com/signin?return_to=%2Fhome') Sign in
+            a.featurette(data-featurette='modal-trigger', data-mobile-fallback='doit', data-target='login-modal', href='#') Sign in
           li.sign-up
-            a.btn.btn-trans.btn-solid.btn-tiny(href='/subscribe/plans?trial=yes') Free trial
+            a.btn.btn-trans.btn-solid.btn-tiny(href='#') Meet the team
         // /nav right
       // /eight columns
     // /row
@@ -42,8 +42,8 @@ body(id='')
           h1 MiScEO
           h2.subheading
             | safe for work
-          a.btn.btn-primary.btn-raised.btn-large(href='#') Free trial
-          a.btn.btn-quiet.btn-raised.btn-large(href='/#') How it works
+          a.btn.btn-primary.btn-raised.btn-large(href='#') Sign Up
+          a.btn.btn-quiet.btn-raised.btn-large(href='#') About
     // /row
   // /header
   .section.proof-points.featurette(data-featurette='marketing-home')
@@ -51,38 +51,6 @@ body(id='')
       .six.columns.image-ex
         // Static learn graphic
         img.at-your-pace(alt='At your pace', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/at-your-pace-04c0d88269ae539a1f0678a4ed1599d1.svg')
-        // Animated learn graphic
-        #webApp
-          #webFinderBar
-            | &bull;&bull;&bull;
-          #webNavBar
-            ul
-              li
-                span
-              li
-                span
-              li
-                span
-              li
-                span
-          #webAppContainer
-            img#webApp1.web-app-screen(alt='Learn web 1', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-web-1-65b9fa138c0401d2e9bc19a2d3269430.png')
-            img#webApp2.web-app-screen(alt='Learn web 2', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-web-2-9ab9165cd81d6c4d2b164892f787beab.png')
-            img#webApp3.web-app-screen(alt='Learn web 3', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-web-3-e79474e9565cf1f3dccce79e5e2e39e5.png')
-        #ipadApp
-          #ipadNavBar
-            ul
-              li
-                span
-              li
-                span
-              li
-                span
-          #ipadAppContainer
-            img#ipadApp1.ipad-app-screen(alt='Learn ipad 1', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-ipad-1-626dcd8f167f5c76be0beef966b8d5a8.png')
-            img#ipadApp2.ipad-app-screen(alt='Learn ipad 2', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-ipad-2-3cae77d67b9e538db47bcd100cad046c.png')
-            img#ipadApp3.ipad-app-screen(alt='Learn ipad 3', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/learn-ipad-3-36660e6389e0744dc562bcc7b0f640bf.png')
-        // /animated learn graphic
       .six.columns.proof-content
         h3.comp-left(data-trigger-animation='learn')
           | Learn at your
@@ -99,24 +67,6 @@ body(id='')
       .six.columns.push-six.image-ex
         // Static practice graphic
         img.practice-perfect(alt='Practice perfect', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/practice-perfect-34435b4aed2912247ea9733e4deec877.svg')
-        // Animated practice graphic
-        #practiceContainer
-          ul.fake-code-block
-            li
-              span.pink-code-block(style='width: 45px;')
-            li
-              span.purp-code-block(style='width: 65px;')
-              span.white-code-block(style='width: 35px;')
-            li
-              span.white-code-block(style='width: 30px;')
-              span.pink-code-block(style='width: 95px;')
-            li
-              span.pink-code-block(style='width: 85px;')
-            li
-              span.purp-code-block(style='width: 50px;')
-              span.white-code-block(style='width: 40px;')
-          img.practice-bg(alt='Practice bg', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/practice-bg-13a6697ad08ae5f25baf923ff3da7170.svg')
-        // /animated practice graphic
       .six.columns.pull-six.proof-content
         h3(data-trigger-animation='practice') Practice makes perfect
         p
@@ -132,14 +82,6 @@ body(id='')
       .six.columns.image-ex
         // Static earn graphic
         img.earn-skills(alt='Earn skills', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/earn-skills-9821fde7e2c9afadb3549c73246e09b8.svg')
-        #earnContainer
-          span.red-blip
-          span.blue-plus
-            span
-          span.blue-blip
-          span.green-plus
-            span
-          img.earn-bg(alt='Earn bg', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/earn-bg-ec7cd6c67ef1055367b8964740abb45b.svg')
       .six.columns.proof-content
         h3(data-trigger-animation='earn')
           | Earn achievements,
@@ -161,10 +103,8 @@ body(id='')
           | With a web site crafted to work on every major device and dedicated
           | mobile apps for both the iPad and Android devices, we&apos;re there to help
           | you learn.
-        a.btn.btn-quiet.btn-raised.btn-medium(href='#')
-          | Treehouse
-          | for iPad
-        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Treehouse for Android
+        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
+        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
   .row.trusted
     .twelve.columns
       .centered-content
@@ -179,7 +119,7 @@ body(id='')
         .four.columns
           blockquote.quote-text
             a(href='#')
-              | @treehouse
+              | @blah
               | is awesome! Learning so much and changing old habits in coding.
           img.quote-author-pic(src='#')
           p.quote-author
@@ -216,8 +156,7 @@ body(id='')
       // /quotes
       p.text-centered
         a.callout-link(href='#')
-          | Read
-          | Treehouse Stories 
+          | Read Stuff
           span.icon.icon-arrow-right-dark
     // /twelve columns
   // /row
@@ -246,27 +185,21 @@ body(id='')
   .minimal-footer
     .row
       .twelve.columns
-        img.minimal-footer-logo(alt='Minimal footer logo', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/minimal-footer-logo-e6e7ab1f68d7a7b7fbb3ab10e0aecd92.svg')
+        img.minimal-footer-logo(alt='Minimal footer logo', src='#')
         p
-          | &copy;2014 Treehouse Island, Inc.
-          br
-          a(href='http://www.teamtreehouse.com/terms') Terms
-          | , 
-          a(href='http://www.teamtreehouse.com/privacy') Privacy
-          | , 
-          a(href='http://www.teamtreehouse.com/support') Contact
+          | &copy;2014 Team Mongeese
         ul.social
           li
-            a(href='http://twitter.com/treehouse', title='Twitter')
+            a(href='#', title='Twitter')
               span.icon.icon-social-twitter
           li
-            a(href='http://facebook.com/teamtreehouse', title='Facebook')
+            a(href='#', title='Facebook')
               span.icon.icon-social-facebook
           li
-            a(href='http://plus.google.com/110278003536476194286/posts', title='Google Plus')
+            a(href='#', title='Google Plus')
               span.icon.icon-social-googleplus
           li
-            a(href='http://linkedin.com/company/treehouse-island-inc-', title='LinkedIn')
+            a(href='#', title='LinkedIn')
               span.icon.icon-social-linkedin
   
   
