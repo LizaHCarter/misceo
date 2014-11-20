@@ -7,7 +7,7 @@ h1 {{mode | uppercase}}
           label(for='email') Email
           input#name(type='text', name='email', ng-model='user.email', autofocus)
         .small-6.columns
-      .row(ng-show='register')
+      .row(ng-hide='register')
         .small-6.columns
           label(for='name') Username
           input#name(type='text', name='name', ng-model='user.name', autofocus)
