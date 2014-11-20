@@ -21,8 +21,7 @@
     "angular-localforage": "~1.2.0",
     "underscore": "~1.7.0",
     "jquery": "~2.1.1",
-    "angular-foundation": "~0.4.0",
-    "angular-snap": "~1.6.0"
+    "angular-foundation": "~0.4.0"
   },
   "resolutions": {
     "angular": ">= 1.0.8"
