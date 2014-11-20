@@ -1,7 +1,8 @@
 'use strict';
 
 var Crawler = require('crawler'),
-    url     = require('url');
+    mongoose = require('mongoose');
+    //url     = require('url');
 
 //this needs to export a mongoose scheme for our crawls
 
@@ -11,18 +12,21 @@ module.exports = mongoose.model('Crawler', {
         depth: {type: Number, required: true}
     });
 
-//static method to be called from controller
+//this static method to be called from controller
 //should return the full crawl object and save it to the db
 Crawler.methods.crawl = function(name, baseUrl, depth){
-    var visited = [];
+
+    //var visited = [];
 
     var c = new Crawler({
-        callback: function (err, result, $){
+        callback: function(err, result, $){
             // $ is cheerio
-            // hash(url w/o params or http://www), push into array
+            // hash(url w/o params or http://www), push into visited
             // use jquery selector to find all images
+
             $('img').attr('src').each(function(){
 
+                //download picture, use request
             });
             // encode as base 64 stings, push to array w/ associated data
 
@@ -30,10 +34,9 @@ Crawler.methods.crawl = function(name, baseUrl, depth){
             $('a').each(function(){});
             // repeat for depth
 
-
             //https://gist.github.com/DSRoden/d909c265f2dda24879b3
         }
     });
 
-    c.queue(baseUrl)
+    c.queue(baseUrl);
 };
