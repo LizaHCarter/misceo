@@ -7,7 +7,6 @@ var Crawler       = require('crawler'),
     CrawlerSchema = null;
 
 CrawlerSchema = new mongoose.Schema({
-    _id :    {type: mongoose.Types.ObjectId, required: true, default: mongoose.Types.ObjectId()},
     name:    {type: String, required: true},
     baseUrl: {type: String, required: true},
     depth:   {type: Number, required: true, validate: [depthV, 'depth must be between 1 & 3']}
@@ -24,25 +23,8 @@ CrawlerSchema.methods.crawl = function(cb){
     var imageUrls    = [],
         pageUrls     = [],
         depthCount   = 0,
-        imageCrawler = null,
-        pageCrawler  = null;
-
-    imageCrawler = new Crawler({
-        jquery: false,
-        skipDuplicates: true,
-        onDrain: function(){
-            cb(null, this._id);
-        }.bind(this),
-        callback: function(err, result){
-            var obj = {
-                origin: result.uri,
-                crawlId: this._id,
-                src: Img.base64EncodeImage(result.body)
-                },
-                newImg = new Img(obj);
-            newImg.save(function(err){});
-        }.bind(this)
-    });
+        pageCrawler  = null,
+        crawlId      = this._id;
 
     pageCrawler = new Crawler({
         skipDuplicates: true,
@@ -51,7 +33,7 @@ CrawlerSchema.methods.crawl = function(cb){
             // if we are at the requested depth call the image crawler on the array of image urls
             depthCount++;
             if(depthCount >= this.depth){
-                imageCrawler.queue(imageUrls);
+                runImageCrawler(crawlId, imageUrls, cb);
             }else{
                 // call the pageCrawler recursively after each batch of URLs has been visited
                 var temp = pageUrls;
@@ -74,5 +56,25 @@ CrawlerSchema.methods.crawl = function(cb){
 
     pageCrawler.queue(this.baseUrl);
 };
+
+function runImageCrawler(crawlId, imageUrls, cb){
+    var imageCrawler = new Crawler({
+        jquery: false,
+        skipDuplicates: true,
+        onDrain: function(){
+            cb(null, crawlId);
+        }.bind(this),
+        callback: function(err, result){
+            var obj = {
+                    origin: result.uri,
+                    crawlId: crawlId,
+                    src: Img.base64EncodeImage(result.body)
+                },
+                newImg = new Img(obj);
+            newImg.save(function(err){});
+        }.bind(this)
+    });
+    imageCrawler.queue(imageUrls);
+}
 
 module.exports = mongoose.model('Crawler', CrawlerSchema);
