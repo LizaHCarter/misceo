@@ -62,7 +62,7 @@ ScraperSchema.methods.scrape = function(cb){
             // console.log(err);
             $('img').each(function(index, imgTag){
                 var uri = $(imgTag).attr('src');
-                if(uri.indexOf('http') == -1){
+                if(uri.indexOf('http') === -1){
                     uri = url.resolve(result.uri, uri);
                 }
                 // console.log(uri);
@@ -71,7 +71,7 @@ ScraperSchema.methods.scrape = function(cb){
             // Push all links on this page into the array or URLs we will visit next
             $('a').each(function(index, anchor){
                 var uri = $(anchor).attr('href');
-                if(uri.indexOf('http') == -1){
+                if(uri.indexOf('http') === -1){
                     uri = url.resolve(result.uri, uri);
                 }
                 pageUrls.push(uri);
