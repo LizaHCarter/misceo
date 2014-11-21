@@ -3,7 +3,7 @@
 'use strict';
 
 var expect    = require('chai').expect,
-    Crawler   = require('../../server/models/Crawler'),
+    Crawler   = require('../../server/models/crawler'),
     mongoose  = require('mongoose'),
     cp        = require('child_process'),
     dbName    = 'misceo-test',
