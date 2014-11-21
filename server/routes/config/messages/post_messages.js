@@ -20,7 +20,7 @@ module.exports = {
     },
     auth: {
         //change to try for testing
-        mode: 'required'
+        mode: 'try'
     },
     handler: function(request, reply){
         Message.send(request.payload, function(err, message){

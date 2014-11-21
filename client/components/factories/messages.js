@@ -3,7 +3,7 @@
 
     angular.module('misceo')
     .factory('Message', ['$http', function($http){
-        function viewMessages(){
+        function getMessages(){
             return $http.get('/messages');
         }
 
@@ -15,6 +15,6 @@
             return $http.post('/messages', message);
         }
 
-        return{viewMessages:viewMessages, viewMessage:viewMessage, createMessage:createMessage};
+        return{getMessages:getMessages, viewMessage:viewMessage, createMessage:createMessage};
     }]);
 })();
