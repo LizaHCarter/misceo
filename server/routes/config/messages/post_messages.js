@@ -1,6 +1,6 @@
 'use strict';
 
-var Message = require('../../../models/messages'),
+var Message = require('../../../models/message'),
     Joi = require('joi');
 
 module.exports = {

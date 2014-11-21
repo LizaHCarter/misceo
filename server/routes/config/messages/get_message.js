@@ -1,6 +1,6 @@
 'use strict';
 
-var Message = require('../../../models/messages'),
+var Message = require('../../../models/message'),
     Joi = require('joi');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     notes: 'A get to /messages/{messageId} should return a single message',
     tags: ['messageing'],
     validate: {
-        payload: {
+        params: {
             messageId: Joi.string().length(24).required()
         }
     },

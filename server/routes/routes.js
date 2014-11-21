@@ -4,6 +4,7 @@
     {method: 'POST'  , path: '/register'  , config: require('./config/users/post_register')},
     {method: 'POST'  , path: '/login'     , config: require('./config/users/post_login')},
     {method: 'GET'   , path: '/messages'  , config: require('./config/messages/get_messages.js')},
+    {method: 'GET'   , path: '/messages/{messageId}'  , config: require('./config/messages/get_message.js')},
     {method: 'POST'  , path: '/messages'  , config: require('./config/messages/post_messages.js')},
     {method: 'DELETE', path: '/logout'   , config: require('./config/users/delete_logout')}
 ];

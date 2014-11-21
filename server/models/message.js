@@ -4,15 +4,16 @@
 'use strict';
 
 var mongoose      = require('mongoose'),
-    Message         = null,
+    Message       = null,
     messageSchema = null;
+
 
   messageSchema = new mongoose.Schema({
     from: {
-        id: {type: mongoose.Types.ObjectId, required: true},
+        id: {type: mongoose.Schema.Types.ObjectId, required: true},
         name: {type: String, required: true}
     },
-    toId: {type: mongoose.Types.ObjectId, required: true},
+    toId: {type: mongoose.Schema.Types.ObjectId, required: true},
     body: {type: String, required: true},
     subject: {type: String, default: '(no subject)'},
     time: {type: Date, default: Date.now}
@@ -20,18 +21,6 @@ var mongoose      = require('mongoose'),
 
 
 messageSchema.statics.send = function(o, cb){
-    /*
-    var m = new Message({
-        from: {
-            id: o.sender._id,
-            name: o.sender.name
-            },
-        toId: o.toId,
-        body: o.body,
-        subject: o.subject
-    });
-    */
-
     var m = new Message(o);
     m.save(function(err){
         cb(err, m);
@@ -50,6 +39,6 @@ messageSchema.statics.oneMessage = function(messageId, cb){
     });
 };
 
-Message = mongoose.models('Message', messageSchema);
+Message = mongoose.model('Message', messageSchema);
 
 module.exports = Message;
