@@ -2,8 +2,12 @@
   'use strict';
 
   angular.module('misceo')
-  .controller('WebcamCtrl', ['$scope', '$state', function($scope, $state){
+  .controller('WebcamCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+    $scope.user = {};
     $scope.mode = $state.current.name;
+    User.getProfile().then(function(response){
+      $scope.user = response.data;
+    });
     var streaming = false,
         video        = document.querySelector('#video'),
         canvas       = document.querySelector('#canvas'),
@@ -43,11 +47,16 @@
         }
     }, false);
     $scope.takePicture = function(){
-          canvas.width = width;
-          canvas.height = height;
-          canvas.getContext('2d').drawImage(video, 0, 0, width, height);
-          var data = canvas.toDataURL('image/png');
-          photo.setAttribute('src', data);
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+      var data = canvas.toDataURL('image/png');
+        console.log(data);
+      $scope.user.pic = data;
+      photo.setAttribute('src', data);
+      User.webcam($scope.user).then(function(res){
+        toastr.success('Your profile has been saved');
+      });
     };
   }]);
 })();

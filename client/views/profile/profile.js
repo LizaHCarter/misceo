@@ -6,7 +6,7 @@
     $scope.user = {};
     User.getProfile().then(function(response){
       $scope.user = response.data;
-    })
+    });
     $scope.mode = $state.current.name;
     $scope.editMode = false;
 

@@ -8,6 +8,6 @@ module.exports = {
     User.findById(request.auth.credentials._id, function(err, user){
       delete user.password;
       reply(user);
-    })
+    });
   }
 };

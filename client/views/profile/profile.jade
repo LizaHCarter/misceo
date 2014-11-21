@@ -8,42 +8,23 @@ h2#profileh2 {{mode | uppercase}}
             .panel-heading
             .panel-body
               dl.dl-horizontal
-                dt Name
+                dt Username
                 dd
                   p(ng-hide='editMode') {{user.name}}
                   input(ng-show='editMode' type='text' ng-model='user.name' required)
                 dt Profile Picture
                 dd
-                  img(ng-hide='editMode' src='{{user.profilePic}}' style='width: 250px')
+                  img(ng-hide='editMode' src='{{user.pic}}' style='width: 250px')
                   input(ng-show='editMode' type='text' ng-model='user.profilePic' required)
-                dt Username
-                dd
-                  p(ng-hide='editMode') {{user.name}}
-                  input(ng-show='editMode', type='text', ng-model='user.name')
                 dt Email
-                dd {{user.email}}
-        .small-2.columns
-        .small-4.columns
-          .panel.panel-info
-            .panel-heading
-            .panel-body
-              dl.dl-horizontal
-              dt Bio:
-              dd
-                p(ng-hide='editMode') {{user.bio}}
-                textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
-              dt Location
                 dd
-                  span(ng-hide='editMode') City: {{user.city}}
-                  br
-                  input(ng-show='editMode', type='text', ng-model='user.city', required, placeholder='City')
-                  span(ng-hide='editMode') State: {{user.state}}
-                  br
-                  input(ng-show='editMode', type='text', ng-model='user.state', required, placeholder='State')
-                  span(ng-hide='editMode') Zipcode: {{user.zip}}
-                  br
-                  input(ng-show='editMode', type='text', ng-model='user.zip', required, ng-minlength='5', ng-maxlength='5', ng-pattern='/^[0-9]+/', placeholder='Zipcode')
-        .small-1.columns
+                  p(ng-hide='editMode') {{user.email}}
+                  input(ng-show='editMode' type='text' ng-model='user.name' required)
+                dt Bio:
+                dd
+                  p(ng-hide='editMode') {{user.bio}}
+                  textarea#summary.input-no-width.rounded.shaded.left.clearboth(ng-show='editMode', ng-model='user.bio', type='text', name='bio', rows='8', cols='50', required, placeholder='Share A Little About Yourself')
+        .small-7.columns
   .row
     .small-5.columns
     .small-2.columns

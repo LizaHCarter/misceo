@@ -23,6 +23,10 @@
     function getProfile(){
       return $http.get('/profile');
     }
-    return {register:register, login:login, logout:logout, updateProfile:updateProfile, getProfile:getProfile};
+    function webcam(pic){
+      console.log('here');
+      return $http.put('/webcam', pic);
+    }
+    return {register:register, login:login, logout:logout, updateProfile:updateProfile, getProfile:getProfile, webcam:webcam};
   }]);
 })();
