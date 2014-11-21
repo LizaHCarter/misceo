@@ -26,6 +26,7 @@ CrawlerSchema.methods.crawl = function(cb){
     imgCrawler = new Crawler({
         jquery: false,
         skipDuplicates: true,
+        encoding: 'binary',
         onDrain: function(){
             cb(null, this._id);
         }.bind(this),
@@ -35,7 +36,7 @@ CrawlerSchema.methods.crawl = function(cb){
             var obj = {
                     origin: result.uri,
                     crawlId: this._id,
-                    src: Img.base64EncodeImage(result.body)
+                    src: Img.base64EncodeImage(result)
                 },
                 newImg = new Img(obj);
             newImg.save(function(err){});

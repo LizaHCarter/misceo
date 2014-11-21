@@ -9,8 +9,11 @@ ImageSchema = new mongoose.Schema({
     crawlId: {type: mongoose.Schema.Types.ObjectId}
 });
 
-ImageSchema.statics.base64EncodeImage = function(imgData){
-    return new Buffer(imgData).toString('base64');
+ImageSchema.statics.base64EncodeImage = function(response){
+    var dataUriPrefix = 'data:' + response.headers['content-type'] + ';base64,',
+        img = new Buffer(response.body.toString(), 'binary').toString('base64');
+    img = dataUriPrefix + img;
+    return img;
 };
 
 module.exports = mongoose.model('Image', ImageSchema);
