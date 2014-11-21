@@ -13,6 +13,7 @@ module.exports = {
         }
     },
     auth: {
+        //change to try for testing,
         mode: 'try'
     },
     handler: function(request, reply){
