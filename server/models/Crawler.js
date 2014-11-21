@@ -7,9 +7,11 @@ var mongoose      = require('mongoose'),
     url           = require('url');
 
 CrawlerSchema = new mongoose.Schema({
-    name:    {type: String, required: true},
-    baseUrl: {type: String, required: true},
-    depth:   {type: Number, required: true, validate: [depthV, 'depth must be between 1 & 3']}
+    name:     {type: String, required: true},
+    baseUrl:  {type: String, required: true},
+    depth:    {type: Number, required: true, validate: [depthV, 'depth must be between 1 & 3']},
+    userId:   {type: mongoose.Schema.Types.ObjectId, required: true},
+    imgCount: {type: Number, default: 0}
 });
 
 function depthV(v){
@@ -20,6 +22,7 @@ CrawlerSchema.methods.crawl = function(cb){
     var imageUrls    = [],
         pageUrls     = [],
         depthCount   = 0,
+        imgCount     = 0,
         pageCrawler  = null,
         imgCrawler   = null;
 
@@ -28,11 +31,12 @@ CrawlerSchema.methods.crawl = function(cb){
         skipDuplicates: true,
         encoding: 'binary',
         onDrain: function(){
-            cb(null, this._id);
+            cb(null, this._id, imgCount);
         }.bind(this),
         callback: function(err, result){
             // console.log(result);
             if(err){return;}
+            imgCount++;
             var obj = {
                     origin: result.uri,
                     crawlId: this._id,

@@ -14,10 +14,15 @@ module.exports = {
             depth: Joi.number().min(1).max(3)
         }
     },
+    auth: {
+        mode: 'required'
+    },
     handler: function(request, reply){
+        request.payload.userId = request.auth.credentials._id;
         var c = new Crawler(request.payload);
-        c.save(function(err){
-            c.crawl(function(err, crawlId){
+        c.crawl(function(err, crawlId, imgCount){
+            c.imgCount = imgCount;
+            c.save(function(err){
                 reply(crawlId);
             });
         });
