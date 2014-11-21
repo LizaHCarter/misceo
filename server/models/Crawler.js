@@ -11,7 +11,8 @@ CrawlerSchema = new mongoose.Schema({
     baseUrl:  {type: String, required: true},
     depth:    {type: Number, required: true, validate: [depthV, 'depth must be between 1 & 3']},
     userId:   {type: mongoose.Schema.Types.ObjectId, required: true},
-    imgCount: {type: Number, default: 0}
+    imgCount: {type: Number, default: 0},
+    images:   {type: Object, default: null}
 });
 
 function depthV(v){

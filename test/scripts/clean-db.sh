@@ -7,4 +7,5 @@ fi
 
 mongoimport --jsonArray --drop --db $1 --collection users --file ../../db/users.json
 mongoimport --jsonArray --drop --db $1 --collection images --file ../../db/images.json
+mongoimport --jsonArray --drop --db $1 --collection crawlers --file ../../db/crawlers.json
 

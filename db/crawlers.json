@@ -1,0 +1,10 @@
+{
+  "_id" : {"$oid":"100000000000000000000001"},
+  "name" : "Test Crawl 1",
+  "baseUrl" : "https://www.google.com",
+  "depth" : 1,
+  "userId" : {"$oid":"000000000000000000000001"},
+  "imgCount" : 2,
+  "images" : null,
+  "__v" : 0
+}

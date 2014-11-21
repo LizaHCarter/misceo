@@ -22,7 +22,7 @@ module.exports = {
                if(err){
                    reply().code(500);
                }else{
-                   reply(request.params.id);
+                   reply({crawlId: request.params.id});
                }
            });
        });

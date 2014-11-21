@@ -23,7 +23,7 @@ module.exports = {
         c.crawl(function(err, crawlId, imgCount){
             c.imgCount = imgCount;
             c.save(function(err){
-                reply(crawlId);
+                reply({crawlId: crawlId});
             });
         });
     }

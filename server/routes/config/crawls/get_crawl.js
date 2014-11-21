@@ -20,7 +20,7 @@ module.exports = {
         Crawler.findById(request.params.id, function(err, crawl){
             Img.find({crawlId: crawl._id}, function(err, images){
                 crawl.images = images;
-                reply(crawl);
+                reply({crawl: crawl});
             });
         });
     }

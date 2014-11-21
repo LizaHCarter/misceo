@@ -14,7 +14,7 @@ module.exports = {
             if(err){
                 reply(err).code(500);
             }else{
-                reply(crawls);
+                reply({crawls: crawls});
             }
         });
     }
