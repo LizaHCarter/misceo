@@ -10,6 +10,7 @@
     .state('profile',  {url:'/profile',  templateUrl:'/views/profile/profile.html', controller:'ProfileCtrl'})
     .state('crawl',    {url:'/search',   templateUrl:'/views/crawls/search_crawl.html', controller:'SearchCrawlCtrl'})
     .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
+    .state('viewMessages', {url:'/messages', templateUrl:'/views/messages/view_messages.html', controller:'ViewMsgsCtrl'})
     .state('webcam',   {url:'/webcam',   templateUrl:'/views/webcam/webcam.html', controller:'WebcamCtrl'})
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
