@@ -4,9 +4,13 @@ module.exports = {
   description: 'Profile',
   notes: 'The Profile page',
   tags:['profile'],
+  auth: {
+    mode: 'required'
+  },
   handler: function(request, reply){
-    User.findById(request.auth.credentials._id, function(err, user){
-      delete user.password;
+    console.log(request.auth.credentials.userId);
+    var query = User.findById(request.auth.credentials.userId).select('-password -_id -__v');
+    query.exec(function(err, user){
       reply(user);
     });
   }

@@ -54,9 +54,10 @@
         console.log(data);
       $scope.user.pic = data;
       photo.setAttribute('src', data);
-      User.webcam($scope.user).then(function(res){
+      User.updateProfile($scope.user).then(function(res){
         toastr.success('Your profile has been saved');
       });
+      console.log($scope.user);
     };
   }]);
 })();

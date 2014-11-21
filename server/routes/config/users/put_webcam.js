@@ -1,6 +1,7 @@
 'use strict';
 
-var User = require('../../../models/user');
+var User = require('../../../models/user'),
+    Joi = require('joi');
 
 module.exports = {
     description: 'A temporary route to make sure i can save off a webcam pic in the db',
@@ -11,7 +12,7 @@ module.exports = {
     },
     handler: function(request, reply){
         console.log(request.payload);
-        User.findOneAndUpdate({_id: request.auth.credentials._id}, request.payload, function(err, user){
+        User.findOneAndUpdate({_id: request.auth.credentials.userId}, request.payload, function(err, user){
             if (err || !user) {
                 return reply().code(500);
             }

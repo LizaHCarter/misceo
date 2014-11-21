@@ -15,11 +15,11 @@ h2#profileh2 {{mode | uppercase}}
                 dt Profile Picture
                 dd
                   img(ng-hide='editMode' src='{{user.pic}}' style='width: 250px')
-                  input(ng-show='editMode' type='text' ng-model='user.profilePic' required)
+                  input(ng-show='editMode' type='text' ng-model='user.pic' required)
                 dt Email
                 dd
                   p(ng-hide='editMode') {{user.email}}
-                  input(ng-show='editMode' type='text' ng-model='user.name' required)
+                  input(ng-show='editMode' type='text' ng-model='user.email' required)
                 dt Bio:
                 dd
                   p(ng-hide='editMode') {{user.bio}}
@@ -29,6 +29,6 @@ h2#profileh2 {{mode | uppercase}}
     .small-5.columns
     .small-2.columns
       button.btn#editButton(style='width: 200px;' ng-hide='editMode', ng-click='startEditMode()') Edit Profile
-      button.btn#saveButton(ng-show='editMode && editForm.$valid', ng-click='updateProfile()') Save
+      button.btn#saveButton(ng-show='editMode', ng-click='updateProfile()') Save
     .small-5.columns
 
