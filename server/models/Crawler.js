@@ -31,6 +31,7 @@ CrawlerSchema.methods.crawl = function(cb){
         }.bind(this),
         callback: function(err, result){
             // console.log(result);
+            if(err){return;}
             var obj = {
                     origin: result.uri,
                     crawlId: this._id,
@@ -60,6 +61,7 @@ CrawlerSchema.methods.crawl = function(cb){
             // $ is cheerio
             // Push the link for each image url found into master array
             // console.log(err);
+            if(err){return;}
             $('img').each(function(index, imgTag){
                 var uri = $(imgTag).attr('src');
                 if(uri.indexOf('http') === -1){
@@ -74,6 +76,7 @@ CrawlerSchema.methods.crawl = function(cb){
                 if(uri.indexOf('http') === -1){
                     uri = url.resolve(result.uri, uri);
                 }
+                // console.log(uri);
                 pageUrls.push(uri);
             });
         }
