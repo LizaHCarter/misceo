@@ -18,9 +18,9 @@ var mongoose      = require('mongoose'),
     time: {type: Date, default: Date.now}
 });
 
-Message = mongoose.models('Message', messageSchema);
 
 messageSchema.statics.send = function(o, cb){
+    /*
     var m = new Message({
         from: {
             id: o.sender._id,
@@ -30,7 +30,9 @@ messageSchema.statics.send = function(o, cb){
         body: o.body,
         subject: o.subject
     });
+    */
 
+    var m = new Message(o);
     m.save(function(err){
         cb(err, m);
     });
@@ -41,5 +43,13 @@ messageSchema.statics.messages = function(toId, cb){
         cb(err, messages);
     });
 };
+
+messageSchema.statics.oneMessage = function(messageId, cb){
+    Message.find({messageId : messageId}, function(err, message){
+        cb(err, message);
+    });
+};
+
+Message = mongoose.models('Message', messageSchema);
 
 module.exports = Message;

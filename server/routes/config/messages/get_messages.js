@@ -4,9 +4,9 @@ var Message = require('../../../models/messages'),
     Joi = require('joi');
 
 module.exports = {
-    description: 'Send a Message',
-    notes: 'A post to /messages will create a new message',
-    tags: ['messageing'],
+    description: 'Get all messages for the logged in user',
+    notes: 'A get to /messages should contain an object with the iD of the currently logged in user. This will return all messages sent to that user',
+    tags: ['messaging'],
     validate: {
         payload: {
             toId: Joi.string().length(24).required()

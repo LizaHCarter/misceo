@@ -6,7 +6,7 @@ var Message = require('../../../models/messages'),
 module.exports = {
     description: 'Send a Message',
     notes: 'A post to /messages will create a new message',
-    tags: ['messageing'],
+    tags: ['messaging'],
     validate: {
         payload: {
             from: {
