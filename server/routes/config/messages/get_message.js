@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     auth: {
-        mode: 'required'
+        mode: 'try'
     },
     handler: function(request, reply){
         Message.oneMessage(request.params.messageId, function(err, message){

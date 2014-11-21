@@ -19,6 +19,7 @@ module.exports = {
         }
     },
     auth: {
+        //change to try for testing
         mode: 'required'
     },
     handler: function(request, reply){
