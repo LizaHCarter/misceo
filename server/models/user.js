@@ -25,6 +25,7 @@ UserSchema.statics.authenticate = function(o, cb){
         if(!user){ return cb();}
         var isOk = bcrypt.compareSync(o.password, user.password);
         if(!isOk){return cb();}
+        console.log('user mongoose model');
         cb(user);
     }.bind(this));
 };

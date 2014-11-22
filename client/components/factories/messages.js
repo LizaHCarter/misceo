@@ -7,7 +7,7 @@
             return $http.get('/messages');
         }
 
-        function viewMessage(messageId){
+        function oneMessage(messageId){
             return $http.get('/messages/'+ messageId);
         }
 
@@ -15,6 +15,6 @@
             return $http.post('/messages', message);
         }
 
-        return{getMessages:getMessages, viewMessage:viewMessage, createMessage:createMessage};
+        return{getMessages:getMessages, oneMessage:oneMessage, createMessage:createMessage};
     }]);
 })();
