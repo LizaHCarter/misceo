@@ -21,8 +21,9 @@ module.exports = {
         User.authenticate(request.payload, function(user){
             if(user){
                 console.log('login');
-                request.auth.session.set({userId: user._id});
-                reply();
+                var cookieData = {_id: user._id, name: user.name, email: user.email};
+                request.auth.session.set(cookieData);
+                reply().code(200).header('X-Authenticated-User', user.name);
             }else{
                 console.log('not login');
                 reply().code(401);
