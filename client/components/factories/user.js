@@ -24,6 +24,8 @@
       return $http.get('/profile');
     }
 
-    return {register:register, login:login, logout:logout, updateProfile:updateProfile, getProfile:getProfile};
+    function webcam(){}
+
+    return {register:register, login:login, logout:logout, updateProfile:updateProfile, getProfile:getProfile, webcam:webcam};
   }]);
 })();
