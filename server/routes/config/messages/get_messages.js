@@ -10,7 +10,8 @@ module.exports = {
         mode: 'required'
     },
     handler: function(request, reply){
-        Message.messages(request.auth.credentials._id, function(err, messages){
+        //console.log('REQUEST>>>>>>>>',request);
+        Message.messages(request.auth.credentials.userId, function(err, messages){
             if(messages){
                 reply(messages).code(200);
             }else{

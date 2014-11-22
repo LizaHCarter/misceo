@@ -1,5 +1,6 @@
 h1 INBOX
 
+pre {{messages | json}}
 table
     thead
         tr
@@ -11,5 +12,6 @@ table
             td {{message.from.name}}
             td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
             td {{message.time}}
+
 
 //from.name, subject,body time

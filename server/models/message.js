@@ -28,13 +28,14 @@ messageSchema.statics.send = function(o, cb){
 };
 
 messageSchema.statics.messages = function(toId, cb){
+    console.log(toId);
     Message.find({toId : toId}, function(err, messages){
         cb(err, messages);
     });
 };
 
 messageSchema.statics.oneMessage = function(messageId, cb){
-    Message.find({messageId : messageId}, function(err, message){
+    Message.findOne({_id : messageId}, function(err, message){
         cb(err, message);
     });
 };
