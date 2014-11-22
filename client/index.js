@@ -21,8 +21,10 @@
     $localForageProvider.config({name:'misceo', storeName:'cache', version:1.0});
     $httpProvider.interceptors.push('HttpInterceptor');
   }])
-  .run(['User', '$rootScope', function(User, $rootScope){
-
+  .run(['User', '$rootScope', '$state', function(User, $rootScope, $state){
+    $rootScope.$on('unauthorized', function(){
+      $state.go('login');
+    });
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     });
 
