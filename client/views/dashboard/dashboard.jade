@@ -1,0 +1,300 @@
+header
+  ul#account-info
+    li#profile(data-layout-element='profile-menu')
+      a(href='#')
+        figure
+          #profile-pic
+            canvas.chart.featurette(data-featurette='points-chart', data-points='{"HTML":6,"CSS":6,"Design":0,"JavaScript":0,"Ruby":0,"PHP":0,"WordPress":0,"iOS":0,"Android":0,"Development Tools":0,"Business":0,"Python":0,"Java":0}', data-points-total='43', height='46', width='46')
+            img(src='https://treehouse-uploads.s3.amazonaws.com/production/profile-photos/1174452/thumb_Photo_on_2012-01-18_at_11.37__4.jpg')
+          figcaption
+            h4 Melanie Fryman
+      #profile-dropdown.dropdown.right
+        h4.dropdown-title
+          a(href='#')
+            strong
+              | Melanie
+              | Fryman
+            span View Profile
+        ul
+          li
+            a(href='#') Account Settings
+          li
+            a(href='#') Free Account!
+        a.dropdown-secondary(href='#') Sign Out
+        
+  ul#breadcrumb(data-layout-element='breadcrumb')
+    li#back.go-home
+      a(href='/home')
+    li#page-title.go-home
+      h3 Workspaces
+    li#mobile-nav-toggle.unread
+      a(href='#')
+        span.hamburger
+        em.notifications 1
+
+#container(data-layout-element='container')
+  #content
+    .grid-container
+      .grid-100.tour-parent.workspace-welcome
+        .contained
+          .grid-100
+            .tour-callout
+              .welcome-panel(data-featurette='workspaces-tour')
+                a.close-tour.button.secondary.button-close(href='#')
+                .grid-100
+                  h2 Getting started with Workspaces
+                  p.subheader
+                    | A fully browser-based code editor
+                    | designed to make learning with Treehouse a breeze.
+                .grid-100.grid-parent
+                  .grid-50.track-callout
+                    h4 Using Workspaces
+                    p
+                      | If you've used a native text editor to code, you'll
+                      | find that Workspaces isn't much different. Work alongside
+                      | a Treehouse course or build something completely from
+                      | scratch. Ready to learn how it works?
+                    a.button(data-tour-trigger-start='', href='#')
+                      | Start
+                      | tour
+                  .grid-50
+                    h4 Workspace Storage
+                    p
+                      | Each Workspace has a total storage limit of 50 MB.
+                      | Currently, students are allowed to have up to 100
+                      | Workspaces created at a time.
+      // Workspaces Controls
+      .grid-100(data-featurette='workspaces-index')
+        // Page Controls
+        .workspace-controls.contained.control-container.control-tour(data-layout-element='control-bar')
+          // Search
+          .search-container
+            form.control-search.search-form
+              input#q(autocomplete='off', name='q', placeholder='Search...', type='text')
+              label.search-open(for='q')
+          // Control Page Items
+          ul.control-page-items
+            // Sorting
+            li.dropdown-parent
+              a.dropdown-parent-label
+                span.currently-selected Latest
+              ul#sort.dropdown-child.filter-dropdown(data-featurette='filter-list')
+                li
+                  a.selected(data-filter-value='') Latest
+                li
+                  a(data-filter-value='title') Name
+            // Filtering
+            li.dropdown-parent.filter-container
+              // Env
+              a.dropdown-parent-label
+                span.currently-selected All Environments
+              ul#env.dropdown-child.filter-dropdown(data-featurette='filter-list')
+                li
+                  a.selected(data-filter-value='')
+                    | All
+                    | Environments
+                li
+                  a(data-filter-value='1') Static
+                li
+                  a(data-filter-value='2') Python
+                li
+                  a(data-filter-value='3') Ruby
+                li
+                  a(data-filter-value='4') PHP5
+                li
+                  a(data-filter-value='5') Sass
+                li
+                  a(data-filter-value='7') Java
+            li.dropdown-parent.filter-container
+              // Courses
+              a.dropdown-parent-label
+                span.currently-selected All Courses
+              ul#course.dropdown-child.filter-dropdown(data-featurette='filter-list')
+                li
+                  a.selected(data-filter-value='') All Courses
+      // Workspaces Table Layout
+      .grid-100
+        .workspace-table.contained
+          .top
+            .grid-100
+              a.new-workspace(data-featurette='modal-trigger', data-mobile-fallback='doit', data-target='new-workspace-modal', href='/workspaces/new')
+                | New
+                span.icon.icon-add-green
+              .workspace-capacity
+                p
+                  | 0 of
+                  span 100
+                .capacity-container.progress-container
+                  .capacity-status.progress-status(style='width: 0.0%')
+          #workspaces-pjax
+            ul.workspace-list
+              li.workspace-item.workspace-tour-step-placeholder.workspace-example
+                .workspace-item-object.workspace-meta.grid-40
+                  h3 Example Workspace
+                  p Started from Blank Template
+                .workspace-item-object.workspace-env.grid-10
+                  p.env
+                    strong Static
+                .workspace-item-object.workspace-actions.grid-20.right
+                  a.workspace-fork(href='')
+                    span.icon.icon-fork
+                  a.workspace-settings(href='')
+                    span.icon.icon-settings
+              li.workspace-item.empty
+                #no-results.empty-message
+                  p You have no Workspaces
+  footer
+    #footer-bonus
+      div
+        h5 Career Resources
+        a.svg(href='/career-resources', title='Career Resources')
+        p
+          | Get
+          a(href='/career-resources') tips and resources
+          | on how to
+          | prepare for and find a new job in the industry.
+      div
+        h5 Treehouse For iPad
+        a.svg(href='/ipad', title='Get the iPad App')
+        p
+          | Learn anytime and anywhere with
+          a(href='/ipad')
+            | Treehouse for
+            | iPad
+          | . Download it for free today in the App store.
+      div
+        h5 Student Perks
+        a.svg(href='/perks', title='See the student perks.')
+        p
+          | A collection of
+          a(href='/perks') special discounts
+          | and
+          | exclusive offers available for Treehouse students.
+    ul#footer-extras
+      li.social-icon
+        a(href='http://twitter.com/treehouse', target='_blank', title='Twitter')
+      li.social-icon
+        a(href='http://youtube.com/user/gotreehouse', target='_blank', title='Youtube')
+      li.social-icon
+        a(href='http://facebook.com/teamtreehouse', target='_blank', title='Facebook')
+      li.social-icon
+        a(href='http://plus.google.com/110278003536476194286/posts', target='_blank', title='Google Plus')
+      li.social-icon
+        a(href='http://linkedin.com/company/treehouse-island-inc-', target='_blank', title='LinkedIn')
+      li.social-icon
+        a(href='http://instagram.com/teamtreehouse', target='_blank', title='Instagram')
+      li#about
+        a(href='/about') About Treehouse
+      li#privacy
+        a(href='/privacy', rel='nofollow') Privacy Policy
+      li#terms
+        a(href='/terms', rel='nofollow') Terms & Conditions
+      li#copyright 2014 Treehouse Island, Inc.
+
+#new-workspace-modal.modal(data-featurette='modal', style='; display: none;')
+  .grid-container
+    .grid-50.grid-parent.centered
+      .contained
+        button.modal-close.small.square.secondary(data-modal-close='close')
+        .grid-100.secondary-heading
+          h1 New Workspace
+        form#new_workspace.featurette(accept-charset='UTF-8', action='/workspaces', data-featurette='launch-new-workspace', method='post', name='new_workspace')
+          div(style='display:none')
+            input(name='utf8', type='hidden', value='✓')
+            input(name='authenticity_token', type='hidden', value='vKkaN9eFUTmj+pLVYy1ekMpv4baGBBzwbZ36zMA7rsU=')
+          .grid-100
+            .field-container.input-field.form-item
+              input#workspace_title(name='workspace[title]', placeholder='Workspace Title', type='text')
+              p Your workspace's title.
+            .field-container.input-field.form-item
+              select#image_id(data-featurette='filter-workspace-templates', name='image_id')
+                option(value='')
+                  | Any environment
+                option(value='1')
+                  | Static
+                option(value='2')
+                  | Python
+                option(value='3')
+                  | Ruby
+                option(value='4')
+                  | PHP5
+                option(value='5')
+                  | Sass
+                option(value='7')
+                  | Java
+              p Pick an environment to start from.
+            .field-container.input-field.form-item
+              select#workspace_forked_workspace_id(data-course-templates='[]', data-starter-templates='[{"id":12,"image_id":1,"title":"Blank Workspace"},{"id":472,"image_id":1,"title":"Twitter Bootstrap 3.1.1"},{"id":482,"image_id":1,"title":"HTML5 Boilerplate 4.3.0"},{"id":225532,"image_id":1,"title":"Foundation Framework 5.2.2"},{"id":590102,"image_id":2,"title":"Python Workspace"},{"id":590122,"image_id":3,"title":"Ruby Workspace"},{"id":592512,"image_id":4,"title":"PHP5 Workspace"},{"id":1009002,"image_id":5,"title":"Sass Workspace"}]', data-user-workspaces='[]', name='workspace[forked_workspace_id]')
+              p Pick an existing workspace or template to start from.
+            .form-footer
+              button.button.button-primary(type='submit')
+                | Create
+                | Workspace
+              button.button.button-secondary.form-close.modal-close-extra Cancel
+#contact-form-modal.modal(data-featurette='help-modal', style='; display: none;')
+  .grid-container
+    .grid-60.centered
+      #help-form.contained.featurette(data-featurette='help-form')
+        .grid-100.secondary-heading
+          h2 Contact Support
+          button.modal-close.small.square.secondary(data-modal-close='close')
+        .grid-70
+          .message.waiting
+            span.loading-spinner.loading-spinner-large
+              span
+          .message.success
+            p
+              strong Thanks!
+              | We'll be in touch.
+          form#contact-form.new_contact_form(accept-charset='UTF-8', action='/contact', method='post', name='contact-form')
+            div(style='display:none')
+              input(name='utf8', type='hidden', value='✓')
+              input(name='authenticity_token', type='hidden', value='vKkaN9eFUTmj+pLVYy1ekMpv4baGBBzwbZ36zMA7rsU=')
+            .message.error
+              p There was a small problem sending your message.
+            input#contact_form_user_id(name='contact_form[user_id]', type='hidden', value='1174452')
+            .form-item
+              label(for='contact_form_name')
+                | Name
+                span *
+              input#contact_form_name(name='contact_form[name]', type='text', value='Melanie Fryman')
+              .error-message
+            .form-item
+              label(for='contact_form_email')
+                | Email
+                span *
+              input#contact_form_email(name='contact_form[email]', type='text', value='melanie@frymanet.com')
+              .error-message
+            fieldset.honey-pot-field
+              .form-item
+                label(for='contact_form_email_confirmation')
+                  | Email
+                  | Confirmation
+                  span *
+                input#contact_form_email_confirmation(name='contact_form[email_confirmation]', type='text', value='')
+                .error-message
+            .form-item
+              label(for='contact_form_message')
+                | Message
+                span *
+              textarea#contact_form_message.form-element(name='contact_form[message]', rows='2')
+              .error-message
+            button.button.button-primary Send Message
+        .grid-30
+          .module.secondary-module.contact-alternative
+            p You can also email support requests to:
+            p
+              a(href='mailto:help@teamtreehouse.com')
+                | help
+                span @
+                | teamtreehouse.com
+          .module.secondary-module.contact-alternative
+            .secondary-heading
+              h3 Content questions?
+            span.icon.icon-forum
+            p
+              | Don't forget you can start a discussion in the
+              a(href='/forum') Forum
+              | . Treehouse teachers and members are actively
+              | discussing topics from course material and other general teaching
+              | topics.
