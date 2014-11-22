@@ -1,7 +1,7 @@
 'use strict';
 
-var User = require('../../../models/user'),
-    Joi = require('joi');
+var User = require('../../../models/user');
+    //Joi = require('joi');
 
 module.exports = {
     description: 'A temporary route to make sure i can save off a webcam pic in the db',
