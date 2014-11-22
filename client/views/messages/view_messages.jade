@@ -1,6 +1,5 @@
 h1 INBOX
 
-
 table
     thead
         tr
@@ -8,7 +7,7 @@ table
             th Subject
             th Date
     tbody
-        tr
+        tr(ng-repeat='message in messages')
             td {{message.from.name}}
             td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
             td {{message.time}}
