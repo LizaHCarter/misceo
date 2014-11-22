@@ -9,6 +9,13 @@
     }
 
     function response(res){
+      var userName = res.headers('x-authenticated-user');
+
+      if(userName){
+        userName = (userName === 'anonymous') ? null : userName;
+        $rootScope.$broadcast('authenticate', userName);
+      }
+
       return res;
     }
 
@@ -17,6 +24,7 @@
     }
 
     function responseError(res){
+      // console.log(res);
       if(res.status === 401){
         $rootScope.$broadcast('unauthorized');
       }
