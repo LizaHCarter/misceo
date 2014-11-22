@@ -20,6 +20,10 @@
       return $http.put('/profile', user);
     }
 
-    return {register:register, login:login, logout:logout, updateProfile:updateProfile};
+    function getProfile(){
+      return $http.get('/profile');
+    }
+
+    return {register:register, login:login, logout:logout, updateProfile:updateProfile, getProfile:getProfile};
   }]);
 })();

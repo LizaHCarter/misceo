@@ -11,7 +11,7 @@ mongoose.connection.once('open', function(){
     server.pack.register(plugins, function(){
         server.auth.strategy('session', 'cookie', true, {
             password: 'secret',
-            cookie: 'session',
+            cookie: 'nathan',
             isSecure: false
         });
         server.route(routes);

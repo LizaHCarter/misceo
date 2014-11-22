@@ -3,6 +3,11 @@
 
   angular.module('misceo')
   .controller('ProfileCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+    $scope.user = {};
+    User.getProfile().then(function(response){
+      console.log(response.data);
+      $scope.user = response.data;
+    });
     $scope.mode = $state.current.name;
     $scope.editMode = false;
 
@@ -11,14 +16,13 @@
     //}
 
     $scope.startEditMode = function(){
-      $scope.editMode = !$scope.editMode;
+      $scope.editMode = true;
     };
 
     $scope.updateProfile = function(){
       $scope.editMode = false;
-      $scope.User.hasEdited = true;
-
-      User.updateProfile($scope.User).then(function(res){
+      User.updateProfile($scope.user).then(function(res){
+        //console.log($scope.user);
         toastr.success('Your profile has been saved');
       });
     };
