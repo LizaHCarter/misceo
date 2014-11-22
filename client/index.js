@@ -11,6 +11,7 @@
     .state('crawl',    {url:'/search',   templateUrl:'/views/crawls/search_crawl.html', controller:'SearchCrawlCtrl'})
     .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('viewMessages', {url:'/messages', templateUrl:'/views/messages/view_messages.html', controller:'ViewMsgsCtrl'})
+    .state('viewMessage', {url:'/messages/{messageId}', templateUrl:'/views/messages/view_message.html', controller:'ViewMsgCtrl'})
     .state('webcam',   {url:'/webcam',   templateUrl:'/views/webcam/webcam.html', controller:'WebcamCtrl'})
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});

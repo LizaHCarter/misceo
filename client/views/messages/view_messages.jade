@@ -1,3 +1,16 @@
-h1 {{title}}
+h1 INBOX
 
-p {{messages}}
+
+table
+    thead
+        tr
+            th From
+            th Subject
+            th Date
+    tbody
+        tr
+            td {{message.from.name}}
+            td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
+            td {{message.time}}
+
+//from.name, subject,body time
