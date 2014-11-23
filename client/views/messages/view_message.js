@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('misceo')
-        .controller('ViewMsgCtrl', ['$scope', 'Message', '$state','$routeParams',  function($scope, Message, $state, $routeParams){
+        .controller('ViewMsgCtrl', ['$scope', 'Message', '$state','$stateParams',  function($scope, Message, $state, $stateParams){
             $scope.title =$state.current.name;
 
-            Message.oneMessage($routeParams.messageId).then(function(response){
+            Message.oneMessage($stateParams.messageId).then(function(response){
                 $scope.message = response.data.message;
             });
         }]);
