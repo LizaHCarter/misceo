@@ -9,7 +9,7 @@
 
         Crawl.findAllForUser().then(function(response){
           $scope.crawls = response.data.crawls;
-          debugger;
+          //debugger;
         });
 
     $scope.submit = function(){

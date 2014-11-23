@@ -11,6 +11,12 @@
       $scope.crawl = response.data.crawl;
     });
 
+    Crawl.getImages($stateParams.crawlId).then(function(response){
+      debugger;
+      $scope.images = response.data.images;
+    });
+
+
 
   }]);
 })();

@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose    = require('mongoose'),
+    Img  = null,
     ImageSchema = null;
 
 ImageSchema = new mongoose.Schema({
@@ -16,4 +17,15 @@ ImageSchema.statics.base64EncodeImage = function(response){
     return img;
 };
 
-module.exports = mongoose.model('Image', ImageSchema);
+ImageSchema.statics.findByCrawl = function(crawlId, cb){
+    //Img.find({crawlId : crawlId}, function(err, images){
+    Img.find({}, function(err, images){
+        console.log('IMAGES RESULTS', images);
+        console.log('err RESULTS', err);
+        cb(err, images);
+    });
+};
+
+Img = mongoose.model('Img', ImageSchema);
+
+module.exports = Img;

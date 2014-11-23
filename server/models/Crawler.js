@@ -37,6 +37,7 @@ CrawlerSchema.methods.crawl = function(cb){
         }.bind(this),
         callback: function(err, result){
             // console.log(result);
+            console.log('image crawler');
             if(err){return;}
             imgCount++;
             var obj = {
@@ -68,6 +69,7 @@ CrawlerSchema.methods.crawl = function(cb){
             // $ is cheerio
             // Push the link for each image url found into master array
             // console.log(err);
+            console.log('page crawler');
             if(err){return;}
             $('img').each(function(index, imgTag){
                 var uri = $(imgTag).attr('src');
