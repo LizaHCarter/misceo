@@ -15,6 +15,7 @@ h2#profileh2 {{mode | uppercase}}
                 dt Profile Picture
                 dd
                   img(ng-hide='editMode' src='{{user.pic}}' style='width: 250px')
+                  button.btn(ng-hide='editMode', ng-click='open()') Change Pic
                   input(ng-show='editMode' type='text' ng-model='user.pic' required)
                 dt Email
                 dd

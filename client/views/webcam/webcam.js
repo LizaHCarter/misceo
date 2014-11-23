@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('misceo')
-  .controller('WebcamCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+  .controller('WebcamCtrl', ['$scope', '$state', 'User', '$modalInstance', function($scope, $state, User, $modalInstance){
     $scope.user = {};
     $scope.mode = $state.current.name;
     User.getProfile().then(function(response){
@@ -14,10 +14,11 @@
         photo        = document.querySelector('#photo'),
         width = 320,
         height = 0;
+    console.log(video);
     navigator.getMedia = (navigator.getUserMedia ||
-                           navigator.webkitGetUserMedia ||
-                           navigator.mozGetUserMedia ||
-                           navigator.msGetUserMedia);
+                          navigator.webkitGetUserMedia ||
+                          navigator.mozGetUserMedia ||
+                          navigator.msGetUserMedia);
     navigator.getMedia(
       {
           video: true,

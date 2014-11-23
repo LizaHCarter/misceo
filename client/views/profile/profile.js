@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('misceo')
-  .controller('ProfileCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+  .controller('ProfileCtrl', ['$scope', '$state', 'User', '$modal', function($scope, $state, User, $modal){
     $scope.user = {};
     User.getProfile().then(function(response){
       console.log(response.data);
@@ -24,6 +24,12 @@
       User.updateProfile($scope.user).then(function(res){
         //console.log($scope.user);
         toastr.success('Your profile has been saved');
+      });
+    };
+    $scope.open = function(){
+      $modal.open({
+        templateUrl: '/views/webcam/webcam.html',
+        controller: 'WebcamCtrl'
       });
     };
   }]);
