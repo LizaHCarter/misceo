@@ -2,10 +2,14 @@
   'use strict';
 
   angular.module('misceo')
-  .controller('OneCrawlCtrl', ['$scope', '$state', '$stateParams', function($scope, $state, $stateParams){
+  .controller('OneCrawlCtrl', ['$scope', '$state', '$stateParams', 'Crawl', function($scope, $state, $stateParams, Crawl){
     $scope.mode = $state.current.name;
     $scope.crawl = {};
     $scope.crawlID = $stateParams.crawlId;
+
+    Crawl.findOne($stateParams.crawlId).then(function(response){
+      $scope.crawl = response.data.crawl;
+    });
 
 
   }]);
