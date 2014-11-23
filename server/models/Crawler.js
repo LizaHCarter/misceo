@@ -20,6 +20,7 @@ function depthV(v){
 }
 
 CrawlerSchema.methods.crawl = function(cb){
+    console.log('create crawl called in model');
     var imageUrls    = [],
         pageUrls     = [],
         depthCount   = 0,

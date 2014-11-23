@@ -4,6 +4,7 @@
     angular.module('misceo')
         .factory('Crawl', ['$http', function($http){
             function create(data){
+                console.log('create crawl called from factory');
                 return $http.post('/crawls', data);
             }
 
