@@ -20,7 +20,7 @@ module.exports = {
     },
     handler: function(request, reply){
         console.log('server side '+request.payload);
-        User.findOneAndUpdate({_id: request.auth.credentials.userId}, request.payload, function(err, user){
+        User.findOneAndUpdate({_id: request.auth.credentials._id}, request.payload, function(err, user){
             if (err || !user) {
                 return reply().code(500);
             }

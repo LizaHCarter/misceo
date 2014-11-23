@@ -9,7 +9,7 @@ module.exports = {
   },
   handler: function(request, reply){
     console.log(request.auth.credentials.userId);
-    var query = User.findById(request.auth.credentials.userId).select('-password -_id -__v');
+    var query = User.findById(request.auth.credentials._id).select('-password -_id -__v');
     query.exec(function(err, user){
       reply(user);
     });

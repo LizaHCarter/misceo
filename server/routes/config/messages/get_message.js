@@ -6,7 +6,7 @@ var Message = require('../../../models/message'),
 module.exports = {
     description: 'retrieve one message',
     notes: 'A get to /messages/{messageId} should return a single message',
-    tags: ['messageing'],
+    tags: ['messaging'],
     validate: {
         params: {
             messageId: Joi.string().length(24).required()
@@ -18,6 +18,7 @@ module.exports = {
     },
     handler: function(request, reply){
         Message.oneMessage(request.params.messageId, function(err, message){
+            console.log('REQUEST.PARAMS.MESSAGEID', request.params.messageId);
             if(message){
                 reply(message).code(200);
             }else{
