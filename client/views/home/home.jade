@@ -5,12 +5,24 @@ body(id='')
         .header-content
           h1 MiScEO
           h2.subheading
-            | safe for work
-          a.btn.btn-primary.btn-raised.btn-large(href='#') Sign Up
-          a.btn.btn-quiet.btn-raised.btn-large(href='#') About
+            | 
+          a.btn.btn-primary.btn-raised.btn-large(href='#') About
+          a.btn.btn-quiet.btn-raised.btn-large(href='#') Meet the Team
     // /row
   // /header
-  
+  // ABOUT SECTION
+  .sign-up-cta
+    .row
+      .eight.columns.centered
+        h1
+          small Blah blah blah
+          |  Blah blah blah
+        p.subheading
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.btn.btn-primary.btn-large.btn-raised(href='#') Blah
+  // / END about section
+  // TEAM SECTION
   section#team.our-team
   .container
     // SECTION HEADER
@@ -18,12 +30,12 @@ body(id='')
       // SECTION TITLE
       h2.dark-text Our Team
     // TEAM MEMBERS
-    .row.wow.fadeInRight.animated(data-wow-offset='40', data-wow-duration='3s', data-wow-delay='0.15s')
+    .row
       // MEMBER 1
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic1.jpg', alt='')
+            img(src='assets/img/team/mikey.jpg', alt='Mikey Badr')
             // MEMBER PROFILE PIC
           .member-details
             h5.dark-text.red-border-bottom Mikey Badr
@@ -41,7 +53,7 @@ body(id='')
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic2.jpg', alt='')
+            img(src='assets/img/team/adam.jpg', alt='Adam Barnhard')
           .member-details
             h5.dark-text.green-border-bottom Adam Barnhard
             .position
@@ -61,7 +73,7 @@ body(id='')
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic3.jpg', alt='')
+            img(src='assets/img/team/liza.jpg', alt='Liza Carter')
           .member-details
             h5.dark-text.blue-border-bottom Liza Carter
             .position
@@ -81,7 +93,7 @@ body(id='')
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic4.jpg', alt='')
+            img(src='assets/img/team/melanie.jpg', alt='Melanie Fryman')
           .member-details
             h5.dark-text.yellow-border-bottom Melanie Fryman
             .position
@@ -101,7 +113,7 @@ body(id='')
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic5.jpg', alt='')
+            img(src='assets/img/team/logan.jpg', alt='Logan Richardson')
           .member-details
             h5.dark-text.red-border-bottom Logan Richardson
             .position
@@ -121,7 +133,7 @@ body(id='')
       .large-4.small-4.columns
         .team-member
           figure.profile-pic.img-responsive
-            img(src='assets/images/team/pic6.jpg', alt='')
+            img(src='assets/img/team/nathan.png', alt='Nathan Vazquez')
           .member-details
             h5.dark-text.red-border-bottom Nathan Vazquez
             .position
@@ -135,99 +147,3 @@ body(id='')
                 a(href='https://github.com/superartie')
                   i.fa.fa-github-square
     // / END team section
-
-    
-  .section.proof-points.featurette(data-featurette='marketing-home')
-    .row.learn.indented
-      .six.columns.image-ex
-        // Static learn graphic
-        img.at-your-pace(alt='At your pace', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/at-your-pace-04c0d88269ae539a1f0678a4ed1599d1.svg')
-      .six.columns.proof-content
-        h3.comp-left(data-trigger-animation='learn')
-          | Blah blah blah
-        p
-          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah.
-        a.callout-link(href='#')
-          |   Blah blah blah
-          span.icon.icon-arrow-right-dark
-    .row.practice.indented
-      .six.columns.push-six.image-ex
-        // Static practice graphic
-        img.practice-perfect(alt='Practice perfect', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/practice-perfect-34435b4aed2912247ea9733e4deec877.svg')
-      .six.columns.pull-six.proof-content
-        h3(data-trigger-animation='practice') Blah blah blah
-        p
-          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah.
-        a.callout-link(href='#')
-          |   Blah blah blah
-          span.icon.icon-arrow-right-dark
-    .row.earn.indented
-      .six.columns.image-ex
-        // Static earn graphic
-        img.earn-skills(alt='Earn skills', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/earn-skills-9821fde7e2c9afadb3549c73246e09b8.svg')
-      .six.columns.proof-content
-        h3(data-trigger-animation='earn')
-          | Blah blah blah
-          br.hide-for-small
-          | blah
-        p
-          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah.
-        a.callout-link(href='#')
-          |   Blah blah blah
-          span.icon.icon-arrow-right-dark
-  .section.ipad
-    .row
-      .seven.columns.end
-        h3 Blah blah blah
-        p
-          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah.
-        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
-        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
-  
-  .sign-up-cta
-    .row
-      .eight.columns.centered
-        h1
-          small Blah blah blah
-          |  Blah blah blah
-        p.subheading
-          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-          | blah blah.
-        a.btn.btn-primary.btn-large.btn-raised(href='#') Blah
-
-  
-  // Dev Footer
-  
-  //- Login  Modal
-  #login-modal.modal(data-featurette='modal', style='; display: none;')
-    .row
-      .five.columns.centered
-        section.contained
-          button.modal-close.small.square.secondary(data-modal-close='close')
-          h1 Sign in
-          form#new_user_session.new_user_session(accept-charset='UTF-8', action='https://teamtreehouse.com/person_session', method='post', name='new_user_session')
-            div(style='display:none')
-              input(name='utf8', type='hidden', value='✓')
-              input(name='authenticity_token', type='hidden', value='vKkaN9eFUTmj+pLVYy1ekMpv4baGBBzwbZ36zMA7rsU=')
-            input#return_to(name='return_to', type='hidden', value='/home')
-            fieldset
-              .form-item
-                label(for='user_session_email') Email Address
-                input#user_session_email(autofocus='autofocus', name='user_session[email]', type='email')
-            fieldset
-              .form-item
-                label(for='user_session_password') Password
-                input#user_session_password(name='user_session[password]', type='password')
-            p.forgot-password
-              a(href='/password_resets')
-                span.icon.icon-help-mini
-                | I forgot my password
-            button.btn.btn-secondary.btn-raised.btn-small(type='submit') Sign in
