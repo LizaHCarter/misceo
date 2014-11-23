@@ -1,3 +1,15 @@
-//
-   Created by loganrichardson on 11/18/14.
+h1 INBOX
 
+table
+    thead
+        tr
+            th From
+            th Subject
+            th Date
+    tbody
+        tr(ng-repeat='message in messages')
+            td {{message.from.name}}
+            td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
+            td {{message.time}}
+
+//from.name, subject,body time

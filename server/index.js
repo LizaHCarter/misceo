@@ -11,13 +11,15 @@ mongoose.connection.once('open', function(){
     server.pack.register(plugins, function(){
         server.auth.strategy('session', 'cookie', true, {
             password: 'secret',
-            cookie: 'session',
+            cookie: 'nathan',
             isSecure: false
         });
         server.route(routes);
-        server.start(function(){
-            server.log('info', 'Server running at: ' + server.info.uri);
-        });
+        if(!module.parent){
+            server.start(function(){
+                server.log('info', 'Server running at: ' + server.info.uri);
+            });
+        }
     });
 });
 
