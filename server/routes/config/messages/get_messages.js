@@ -11,7 +11,7 @@ module.exports = {
     },
     handler: function(request, reply){
         //console.log('REQUEST>>>>>>>>',request);
-        Message.messages(request.auth.credentials.userId, function(err, messages){
+        Message.messages(request.auth.credentials._id, function(err, messages){
             if(messages){
                 reply(messages).code(200);
             }else{
