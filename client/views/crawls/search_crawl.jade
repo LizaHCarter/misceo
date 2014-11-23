@@ -36,7 +36,7 @@ h2#Crawlh2 {{mode | uppercase}}
         th # of Images
       tbody(ng-repeat='crawl in crawls | filter:query')
         tr
-          td {{crawl.name}}
+          td: a(href='/#/crawl/{{crawl._id}}') {{crawl.name}}
           td {{crawl.baseUrl}}
           td {{crawl.imgCount}}
   .small-1.large-1.columns
