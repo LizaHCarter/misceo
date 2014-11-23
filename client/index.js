@@ -11,6 +11,7 @@
     .state('dashboard',    {url:'/dashboard',            templateUrl:'/views/dashboard/dashboard.html',    controller:'DashboardCtrl'})
     .state('profile',      {url:'/profile',              templateUrl:'/views/profile/profile.html',        controller:'ProfileCtrl'})
     .state('crawl',        {url:'/crawl',                templateUrl:'/views/crawls/search_crawl.html',    controller:'SearchCrawlCtrl'})
+    .state('oneCrawl',     {url:'/crawl/{crawlId}',      templateUrl:'/views/crawls/one_crawl.html',       controller:'OneCrawlCtrl'})
     .state('register',     {url:'/register',             templateUrl:'/views/users/users.html',            controller:'UsersCtrl'})
     .state('viewMessages', {url:'/messages',             templateUrl:'/views/messages/view_messages.html', controller:'ViewMsgsCtrl'})
     .state('newMessage',   {url:'/newmessage',         templateUrl:'/views/messages/new_message.html',   controller:'NewMsgCtrl'})

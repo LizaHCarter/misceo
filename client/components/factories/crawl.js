@@ -19,6 +19,10 @@
                 return $http.delete('/crawls/' + crawlId);
             }
 
-            return {create: create, findAllForUser: findAllForUser, findOne: findOne, remove: remove};
+            function getImages(crawlId){
+                return $http.get('/images/' + crawlId);
+            }
+
+            return {create: create, findAllForUser: findAllForUser, findOne: findOne, remove: remove, getImages:getImages};
         }]);
 })();
