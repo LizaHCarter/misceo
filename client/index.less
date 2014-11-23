@@ -1,25 +1,42 @@
-// http://clrs.cc/
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
-@NAVY:    #001F3F;
-@BLUE:    #0074D9;
-@AQUA:    #7FDBFF;
-@TEAL:    #39CCCC;
-@OLIVE:   #3D9970;
-@GREEN:   #2ECC40;
-@LIME:    #01FF70;
-@YELLOW:  #FFDC00;
-@ORANGE:  #FF851B;
-@RED:     #FF4136;
-@MAROON:  #85144B;
-@FUCHSIA: #F012BE;
-@PURPLE:  #B10DC9;
-@BLACK:   #111111;
-@GRAY:    #AAAAAA;
-@SILVER:  #DDDDDD;
-
-body{
-  background-color: @GRAY;
+body {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+  color: #384047;
+  font-style: normal;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+}
+
+/* MIXINS */
+
+@main: #384047;
+@green: #56BA73;
+@red: #;
+
+// @NAVY:    #001F3F;
+// @BLUE:    #0074D9;
+// @AQUA:    #7FDBFF;
+// @TEAL:    #39CCCC;
+// @OLIVE:   #3D9970;
+// @GREEN:   #2ECC40;
+// @LIME:    #01FF70;
+// @YELLOW:  #FFDC00;
+// @ORANGE:  #FF851B;
+@RED:     #FF4136;
+// @MAROON:  #85144B;
+// @FUCHSIA: #F012BE;
+// @PURPLE:  #B10DC9;
+// @BLACK:   #111111;
+// @GRAY:    #AAAAAA;
+// @SILVER:  #DDDDDD;
 
 //-------Input Style--------//
 
@@ -31,18 +48,44 @@ input.ng-invalid, select.ng-invalid{
 
 //-------Home Page Style-------//
 
+header.header {
+  background: @main;
+  height: 750px;
+}
+.header .header-content h1 {
+  line-height: 1.1;
+  color: #fff;
+  font-size: 200px;
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+}
+.header .header-content h1 + .subheading {
+  color: rgba(255, 255, 255, 0.7);
+  padding-right: 160px;
+  margin-bottom: 35px;
+  margin-top: 0;
+  font-size: 35px!important;
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+}
 .header .header-content {
-  margin-top: 60px;
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+  margin-top: 120px;
   margin-bottom: 120px;
+}
+.header {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+  background-size: 50%;
+  position: relative;
+  padding-top: 35px;
+  background: @main;
 }
 //-------End Home Page Style-------//
 
 
 /*===  OUR TEAM SECTION  ===*/
 .our-team{
-  padding-bottom: 66px;
-  padding-top: 100px;
-  background: #FFFFFF;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background: #fff;
 }
 .team-member{
   border-radius: 4px;
@@ -51,6 +94,7 @@ input.ng-invalid, select.ng-invalid{
   margin-bottom: 35px;
 }
 .team-member .details{
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-align: left;
   font-size: 13px;
   line-height: 20px;
@@ -75,7 +119,7 @@ input.ng-invalid, select.ng-invalid{
 .team-member:hover .details{
   top: 0;
   background: #333;
-  color: white;
+  color: #fff;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   opacity: 1;
@@ -94,6 +138,7 @@ input.ng-invalid, select.ng-invalid{
 }
 .team-member h5{
   text-transform: uppercase;
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   color: #404040;
   font-weight: 700;
   position: relative;
@@ -114,31 +159,14 @@ input.ng-invalid, select.ng-invalid{
   text-align: center;
 }
 .team-member .social-icons ul li a{
-  background: #FFF;
+  background: #fff;
   font-size: 18px;
   border-radius: 50%;
   color: #808080;
   text-align: center;
 }
 .team-member .social-icons ul li a:hover{
-  color: #5FCF80;
-}
-
-@media (max-width: 1200px) {
-  img#nashTN {
-    display: none;
-  }
-}
-
-.custcol {
-  width: 100%/3;
-  display: inline-block;
-}
-@media (max-width: 768px) {
-  .custcol {
-    width: 100%;
-    display: inline;
-  }
+  color: @green;
 }
 //-------END Our Team Style-------//
 
@@ -155,7 +183,7 @@ canvas {
 #particles-js {
   width:100%;
   height:100%;
-  background:#5fcf80;
+  background: @green;
 }
 //-------End Particles Style-------//
 
@@ -163,32 +191,34 @@ canvas {
 
 //--------Nav Styling--------//
 
-header.header, nav.top-bar, .top-bar-section {
-  background: #384047;
+nav.top-bar, .top-bar-section {
+  background: @main;
 }
 #nav {
-  background: #384047;
+  background: @main;
   height: 70px;
   z-index: 101;
   padding: 10px 30px;
   vertical-align: middle;
 }
 .top-bar-section ul {
-  background: #384047;
+  background: @main;
 }
 .top-bar .name h1 {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-transform: uppercase;
   width: 100%;
   text-align: left;
-  background: #384047;
+  background: @main;
   font-size: 25px;
   font-weight: 500;
 }
 .top-bar-section li:not(.has-form) a:not(.button) {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-transform: uppercase;
   width: 100%;
   text-align: right;
-  background: #384047;
+  background: @main;
   font-size: 16px;
   font-weight: 500;
 }
@@ -209,6 +239,7 @@ header.header, nav.top-bar, .top-bar-section {
 
 //--------Profile Page Styling-------//
 #profile h2{
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-align: center;
   font-weight: bold;
 }
@@ -222,10 +253,12 @@ header.header, nav.top-bar, .top-bar-section {
 //--------Crawl Page Styling--------//
 
 #Crawlh2{
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-align: center;
   font-weight: bold;
 }
 #savedCrawls{
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-align: center;
   font-weight: bold;
 }
