@@ -20,9 +20,11 @@ module.exports = {
     handler: function(request, reply){
         User.registerUser(request.payload, function(err, user){
             if(user){
-                reply(user);
+                var cookieData = {_id: user._id, name: user.name, email: user.email};
+                request.auth.session.set(cookieData);
+                reply().code(200).header('X-Authenticated-User', user.name);
             }else{
-                reply().code(err ? 401 : 200);
+                reply().code(err ? 500 : 401);
             }
         });
     }

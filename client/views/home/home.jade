@@ -1,3 +1,106 @@
-h1 Home State
+body(id='')
+  header.header
+    .row
+      .eight.columns.end
+        .header-content
+          h1 MiScEO
+          h2.subheading
+            | safe for work
+          a.btn.btn-primary.btn-raised.btn-large(href='#') Sign Up
+          a.btn.btn-quiet.btn-raised.btn-large(href='#') About
+    // /row
+  // /header  
+  .section.proof-points.featurette(data-featurette='marketing-home')
+    .row.learn.indented
+      .six.columns.image-ex
+        // Static learn graphic
+        img.at-your-pace(alt='At your pace', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/at-your-pace-04c0d88269ae539a1f0678a4ed1599d1.svg')
+      .six.columns.proof-content
+        h3.comp-left(data-trigger-animation='learn')
+          | Blah blah blah
+        p
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.callout-link(href='#')
+          |   Blah blah blah
+          span.icon.icon-arrow-right-dark
+    .row.practice.indented
+      .six.columns.push-six.image-ex
+        // Static practice graphic
+        img.practice-perfect(alt='Practice perfect', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/practice-perfect-34435b4aed2912247ea9733e4deec877.svg')
+      .six.columns.pull-six.proof-content
+        h3(data-trigger-animation='practice') Blah blah blah
+        p
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.callout-link(href='#')
+          |   Blah blah blah
+          span.icon.icon-arrow-right-dark
+    .row.earn.indented
+      .six.columns.image-ex
+        // Static earn graphic
+        img.earn-skills(alt='Earn skills', src='https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/earn-skills-9821fde7e2c9afadb3549c73246e09b8.svg')
+      .six.columns.proof-content
+        h3(data-trigger-animation='earn')
+          | Blah blah blah
+          br.hide-for-small
+          | blah
+        p
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.callout-link(href='#')
+          |   Blah blah blah
+          span.icon.icon-arrow-right-dark
+  .section.ipad
+    .row
+      .seven.columns.end
+        h3 Blah blah blah
+        p
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
+        a.btn.btn-quiet.btn-raised.btn-medium(href='#') Blah
+  
+  .sign-up-cta
+    .row
+      .eight.columns.centered
+        h1
+          small Blah blah blah
+          |  Blah blah blah
+        p.subheading
+          | Blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          | blah blah.
+        a.btn.btn-primary.btn-large.btn-raised(href='#') Blah
 
-h4 MLF is working on the home page, nav, &amp; website theme/UI.
+  
+  // Dev Footer
+  
+  //- Login  Modal
+  #login-modal.modal(data-featurette='modal', style='; display: none;')
+    .row
+      .five.columns.centered
+        section.contained
+          button.modal-close.small.square.secondary(data-modal-close='close')
+          h1 Sign in
+          form#new_user_session.new_user_session(accept-charset='UTF-8', action='https://teamtreehouse.com/person_session', method='post', name='new_user_session')
+            div(style='display:none')
+              input(name='utf8', type='hidden', value='✓')
+              input(name='authenticity_token', type='hidden', value='vKkaN9eFUTmj+pLVYy1ekMpv4baGBBzwbZ36zMA7rsU=')
+            input#return_to(name='return_to', type='hidden', value='/home')
+            fieldset
+              .form-item
+                label(for='user_session_email') Email Address
+                input#user_session_email(autofocus='autofocus', name='user_session[email]', type='email')
+            fieldset
+              .form-item
+                label(for='user_session_password') Password
+                input#user_session_password(name='user_session[password]', type='password')
+            p.forgot-password
+              a(href='/password_resets')
+                span.icon.icon-help-mini
+                | I forgot my password
+            button.btn.btn-secondary.btn-raised.btn-small(type='submit') Sign in
