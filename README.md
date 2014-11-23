@@ -1,46 +1,21 @@
-## name of project
-### Code Badges
-build status icon
-coverage status icon
-
-### Screenshots
-![Image1](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/one.jpg)
-![Image2](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/two.jpg)
+## Misceo
 
 ### Description
-write a description about your project
+Misceo lets you use a crawler to experience the web differently. Give it a starting site and a depth, our crawler will download all images from the site and follow all links. It will repeat this until it reaches the specified depth.
+You can view all these images, and view graphs about describing each of your crawls. Users can make a profile, including a picture taken from their webcam, and send messages to other users.
 
-### Models
-```
-Model 1
-```
+#### The Stack
+- [AngularJs](https://angularjs.org/)
+- [Hapi](http://hapijs.com/)
+- [Mongoose](http://mongoosejs.com/)
+- [NodeJs](http://nodejs.org/)
 
-```
-Model 2
-```
-
-### Database
-```
-Collecion 1
-```
-
-```
-Collection 2
-```
-
-### Features
-- [x] Feature 1
-- [ ] Feature 2
-- [x] Feature 3
-
-### Running Tests
-```bash
-$ npm install
-$ npm test
-```
-
-### Contributors
-- [Chyld Medford](https://github.com/chyld)
+### Made with love for Nashville Software School by:
+- [Liza Carter](https://github.com/lizahcarter)
+- [Adam Barnhard](https://github.com/ABarnhard)
+- [Mikey Badr](https://github.com/mfbadr)
+- [Nathan Vazquez](https://github.com/superartie)
+- [Melanie Fryman](https://github.com/mlfryman)
 
 ### License
 [MIT](LICENSE)
