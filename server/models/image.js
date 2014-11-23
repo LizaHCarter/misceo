@@ -18,8 +18,8 @@ ImageSchema.statics.base64EncodeImage = function(response){
 };
 
 ImageSchema.statics.findByCrawl = function(crawlId, cb){
-    //Img.find({crawlId : crawlId}, function(err, images){
-    Img.find({}, function(err, images){
+    Img.find({crawlId : crawlId}, function(err, images){
+    //Img.find({}, function(err, images){
         console.log('IMAGES RESULTS', images);
         console.log('err RESULTS', err);
         cb(err, images);
