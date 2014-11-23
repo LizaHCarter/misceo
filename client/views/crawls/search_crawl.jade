@@ -31,14 +31,12 @@ h2#Crawlh2 {{mode | uppercase}}
     h2#savedCrawls Saved Crawls
     table
       thead
-        th Delete
         th Crawl Name
         th URL Crawled
         th # of Images
       tbody(ng-repeat='crawl in crawls | filter:query')
         tr
-          td(ng-show="crawl.email === email", ng-click='deleteCrawl(crawl._id)') Delete
-          td(ng-click='join=true') {{crawl.name}}
-          td {{crawl.url}}
-          td
+          td {{crawl.name}}
+          td {{crawl.baseUrl}}
+          td {{crawl.imgCount}}
   .small-1.large-1.columns

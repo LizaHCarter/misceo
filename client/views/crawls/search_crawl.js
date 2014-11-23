@@ -7,9 +7,13 @@
     $scope.crawl = {};
     $scope.crawls = [];
 
+        Crawl.findAllForUser().then(function(response){
+          $scope.crawls = response.data.crawls;
+          debugger;
+        });
+
     $scope.submit = function(){
       $scope.crawl.depth = parseInt($scope.crawl.depth);
-      console.log('submit called with payload', $scope.crawl);
       Crawl.create($scope.crawl).then(function(response){
         debugger;
         if(response.data.crawl){
