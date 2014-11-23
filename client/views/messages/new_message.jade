@@ -1,3 +1,17 @@
-h1 {{title}}
+h2 {{title | uppercase}}
+.row#messageRow
+    .small-1.large-1.columns
+    .small-3.large-3.columns#formWrap
+        form(role='form', novalidate, name='newMessageForm')
+            label
+                h5 Select Recipient:
+                select
+                    option(ng-repeat='user in users', value='user._id') {{user.name}}
+            label#nameLabel(for='subject') Subject:
+                input.form-control#messageSubject(type='text', name='subject', ng-model='message.subject', autofocus)
+            h5 Body:
+                textarea#messageBody(name='body', ng-model='message.body')
 
-pre {{users | json}}
+            button.btn(ng-click='submit()') Send Message
+    .small-1.large-3.columns
+    .small-3.large-2.columns
