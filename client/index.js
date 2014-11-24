@@ -13,10 +13,10 @@
     .state('crawl',        {url:'/crawl',                templateUrl:'/views/crawls/search_crawl.html',    controller:'SearchCrawlCtrl'})
     .state('oneCrawl',     {url:'/crawl/{crawlId}',      templateUrl:'/views/crawls/one_crawl.html',       controller:'OneCrawlCtrl'})
     .state('register',     {url:'/register',             templateUrl:'/views/users/users.html',            controller:'UsersCtrl'})
+    .state('webcam',       {url:'/webcam',               templateUrl:'/views/webcam/webcam.html',           controller:'WebcamCtrl'})
     .state('viewMessages', {url:'/messages',             templateUrl:'/views/messages/view_messages.html', controller:'ViewMsgsCtrl'})
     .state('newMessage',   {url:'/newmessage',         templateUrl:'/views/messages/new_message.html',   controller:'NewMsgCtrl'})
     .state('viewMessage',  {url:'/messages/{messageId}', templateUrl:'/views/messages/view_message.html',  controller:'ViewMsgCtrl'})
-    .state('webcam',       {url:'/webcam',               templateUrl:'/views/webcam/webcam.html',          controller:'WebcamCtrl'})
     .state('login',        {url:'/login',                templateUrl:'/views/users/users.html',            controller:'UsersCtrl'})
     .state('logout',       {url:'/logout',               template:'',                                      controller:'UsersCtrl'});
 

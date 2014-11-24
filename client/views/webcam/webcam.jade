@@ -1,4 +1,16 @@
-video#video
-button#startbutton(ng-click='takePicture()') take photo
-canvas#canvas
-img#photo(ng-src='http://placekitten.com/g/320/261')
+.row
+  .small-4.columns
+  .small-4.columns
+    video#video(ng-hide='sayCheese')
+    img#photo(ng-show='sayCheese')
+  .small-4.columns
+.row
+  .small-4.columns
+  .small-4.columns(ng-hide='sayCheese')
+    button#startbutton(ng-hide='sayCheese', ng-click='takePicture()') Take Photo
+  .small-2.columns(ng-show='sayCheese')
+    button#savebutton(ng-show='sayCheese', ng-click='savePicture()') Save
+  .small-2.columns(ng-show='sayCheese')
+    button#retakebutton(ng-show='sayCheese', ng-click='retake()') Retake
+  .small-4.columns
+canvas#canvas(ng-hide='hideCanvas')
