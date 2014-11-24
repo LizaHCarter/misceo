@@ -19,5 +19,5 @@ You can view all these images, and view graphs about describing each of your cra
 - [Nathan Vazquez](https://github.com/superartie)
 
 ### License
-[MIT](LICENSE)
+- [MIT](LICENSE)
 
