@@ -1,18 +1,19 @@
 .section-header.eight.columns.centered
   h1 INBOX
-
-pre {{messages | json}}
-table
-    thead
+//pre {{messages | json}}
+.row
+  .large-12.columns
+    table#inbox
+      thead
         tr
-            th From
-            th Subject
-            th Date
-    tbody
+          th From
+          th Subject
+          th Date
+      tbody
         tr(ng-repeat='message in messages')
-            td {{message.from.name}}
-            td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
-            td {{message.time}}
-
-
-//from.name, subject,body time
+          td: a(href='/#/messages/{{message._id}}') {{message.from.name}}
+          td: a(href='/#/messages/{{message._id}}') {{message.subject}}
+          td {{message.time | date : formatt: medium}}
+    a(href='/#/newmessage')
+      a.btn.btn-secondary.btn-small.btn-raised.text-center Compose Message
+//- from.name, subject,body timlarge
