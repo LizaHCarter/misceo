@@ -1,3 +1,4 @@
-h1 View Message
-h2 {{title}}
-pre {{message | json}}
+h2 {{message.subject}}
+h3 From: {{message.from.name}}
+h4 Sent: {{message.time | date : format : medium}}
+p {{message.body}}
