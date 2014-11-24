@@ -1,17 +1,18 @@
-h1 INBOX
-
-pre {{messages | json}}
-table
-    thead
+h1#Crawlh2 INBOX
+//pre {{messages | json}}
+.row
+  .large-12
+    table#inbox
+      thead
         tr
-            th From
-            th Subject
-            th Date
-    tbody
+          th From
+          th Subject
+          th Date
+      tbody
         tr(ng-repeat='message in messages')
-            td {{message.from.name}}
-            td: a(href='/#/messages/{{messages._id}}') {{message.subject}}
-            td {{message.time}}
+          td: a(href='/#/profile/{{message._id}}') {{message.from.name}}
+          td: a(href='/#/messages/{{message._id}}') {{message.subject}}
+          td {{message.time}}
 
 
 //from.name, subject,body time
