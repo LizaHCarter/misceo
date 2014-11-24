@@ -111,10 +111,7 @@ p + .btn {
   transition: all 200ms ease-in-out;
 }
 
-.btn {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-}
+
 
 .column, .columns {
   float: left;
@@ -572,4 +569,187 @@ nav.top-bar, .top-bar-section {
 
 .pull-ten {
   right: 83.33333%;
+}
+
+
+//--------Buttons Styling--------//
+.btn {
+  font-family: "Lato", Helvetica, Arial, sans-serif!important;
+  font-weight: 700;
+}
+
+.btn-caps {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: @GREEN;
+  border-color: @GREEN;
+  color: @GREEN;
+}
+
+.btn-primary.btn-raised {
+  border-color: #3ac162;
+}
+
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary:focus {
+  background-color: #4bc970;
+  border-color: #3ac162;
+  color: #3ac162;
+}
+
+.btn-secondary {
+  background-color: #3f8abf;
+  border-color: #3f8abf;
+  color: #3f8abf;
+}
+
+.btn-secondary.btn-raised {
+  border-color: #326e99;
+}
+
+.btn-secondary:hover,.btn-secondary:focus,.btn-secondary:active,.btn-secondary:focus {
+  background-color: #397cac;
+  border-color: #326e99;
+  color: #326e99;
+}
+
+.btn-quiet {
+  background-color: #c6ccd2;
+  border-color: #c6ccd2;
+  color: #c6ccd2;
+}
+
+.btn-quiet.btn-raised {
+  border-color: #aab3bb;
+}
+
+.btn-quiet:hover,.btn-quiet:focus,.btn-quiet:active,.btn-quiet:focus {
+  background-color: #b8bfc7;
+  border-color: #aab3bb;
+  color: #aab3bb;
+}
+
+.btn-white {
+  background-color: #fff;
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-white.btn-raised {
+  border-color: #e6e6e6;
+}
+
+.btn-white:hover,.btn-white:focus,.btn-white:active,.btn-white:focus {
+  background-color: #f2f2f2;
+  border-color: #e6e6e6;
+  color: #e6e6e6;
+}
+
+.btn-trans {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.btn-trans:hover,.btn-trans:focus,.btn-trans:active,.btn-trans:focus {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.btn-solid {
+  color: #fff;
+}
+
+.btn-solid:hover,.btn-solid:focus,.btn-solid:active,.btn-solid:focus {
+  color: #fff;
+}
+
+.btn-raised {
+  border-width: 1px 1px 3px;
+  -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  color: #fff;
+  border-style: solid;
+}
+
+.btn-raised:hover,.btn-raised:focus,.btn-raised:active,.btn-raised:focus {
+  color: #fff;
+}
+
+.btn-ghost {
+  background: none;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.btn-ghost:hover,.btn-ghost:focus,.btn-ghost:active,.btn-ghost:focus {
+  background: none;
+}
+
+.btn-ghost.btn-white {
+  color: #fff;
+}
+
+.btn-tiny {
+  font-size: 11px;
+  padding: 13px 21px 12px;
+}
+
+.btn-tiny.btn-raised {
+  padding: 12px 20px 11px;
+}
+
+.btn-tiny.btn-ghost {
+  padding: 11px 19px;
+}
+
+.btn-small {
+  font-size: 13px;
+  padding: 13px 22px 12px;
+}
+
+.btn-small.btn-raised {
+  padding: 12px 21px 11px;
+}
+
+.btn-small.btn-ghost {
+  padding: 11px 20px;
+}
+
+.btn-medium {
+  font-size: 16px;
+  padding: 18px 30px 17px;
+}
+
+.btn-medium.btn-raised {
+  padding: 17px 29px 16px;
+}
+
+.btn-medium.btn-ghost {
+  padding: 16px 28px;
+}
+
+.btn-large {
+  font-size: 18px;
+  padding: 20px 40px 19px;
+}
+
+.btn-large.btn-raised {
+  padding: 19px 39px 18px;
+}
+
+.btn-large.btn-ghost {
+  padding: 18px 38px;
+}
+
+.btn-xlarge {
+  font-size: 22px;
+  padding: 22px 48px 21px;
+}
+
+.btn-xlarge.btn-raised {
+  padding: 21px 47px 20px;
+}
+
+.btn-xlarge.btn-ghost {
+  padding: 20px 46px;
 }
