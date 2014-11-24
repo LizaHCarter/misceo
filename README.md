@@ -11,12 +11,13 @@ You can view all these images, and view graphs about describing each of your cra
 - [NodeJs](http://nodejs.org/)
 
 ### Made with love for Nashville Software School by:
-- [Liza Carter](https://github.com/lizahcarter)
-- [Adam Barnhard](https://github.com/ABarnhard)
+- [Liza Carter](https://github.com/lizahcarter) - PM
 - [Mikey Badr](https://github.com/mfbadr)
-- [Nathan Vazquez](https://github.com/superartie)
+- [Adam Barnhard](https://github.com/ABarnhard)
 - [Melanie Fryman](https://github.com/mlfryman)
+- [Logan Richardson](https://github.com/GLoganDR)
+- [Nathan Vazquez](https://github.com/superartie)
 
 ### License
-[MIT](LICENSE)
+- [MIT](LICENSE)
 
