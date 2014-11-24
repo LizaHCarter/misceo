@@ -4,4 +4,7 @@
   .twelve.columns
     h3 Starting from {{crawl.baseUrl}} to a depth of {{crawl.depth}}, your crawler found {{crawl.imgCount}} images!
 .row#crawlsRow
-    img(ng-repeat='image in images', src='{{image.src}}')
+  ul.images
+    li.thumbnail(ng-repeat='image in images')
+      a.th(href='{{image.origin}}')
+        img#imgStyle(ng-src='{{image.src}}')

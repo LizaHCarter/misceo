@@ -15,7 +15,6 @@
     $scope.submit = function(){
       $scope.crawl.depth = parseInt($scope.crawl.depth);
       Crawl.create($scope.crawl).then(function(response){
-        debugger;
         if(response.data.crawl){
           $scope.crawls.push(response.data.crawl);
           $scope.crawl = {};
