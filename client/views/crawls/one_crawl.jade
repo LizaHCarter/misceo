@@ -1,0 +1,10 @@
+.section-header.eight.columns.centered
+  h1 {{crawl.name}}
+.row
+  .twelve.columns
+    h3 Starting from {{crawl.baseUrl}} to a depth of {{crawl.depth}}, your crawler found {{crawl.imgCount}} images!
+.row#crawlsRow
+  ul.images
+    li.thumbnail(ng-repeat='image in images')
+      a.th(href='{{image.origin}}')
+        img#imgStyle(ng-src='{{image.src}}')

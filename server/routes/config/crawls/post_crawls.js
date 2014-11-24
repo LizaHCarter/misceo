@@ -19,6 +19,7 @@ module.exports = {
     },
     handler: function(request, reply){
         request.payload.userId = request.auth.credentials._id;
+        console.log('POST RECIEVED FOR CREATE CRAWL');
         var c = new Crawler(request.payload);
         c.crawl(function(err, crawlId, imgCount){
             c.imgCount = imgCount;

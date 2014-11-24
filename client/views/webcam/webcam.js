@@ -2,11 +2,13 @@
   'use strict';
 
   angular.module('misceo')
-  .controller('WebcamCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
-    $scope.user = {};
+  .controller('WebcamCtrl', ['$scope', 'User', '$state', function($scope, User, $state){
+    $scope.user ={};
     $scope.mode = $state.current.name;
+    $scope.hideCanvas = true;
+    $scope.sayCheese = false;
     User.getProfile().then(function(response){
-      $scope.user = response.data;
+        $scope.user = response.data;
     });
     var streaming = false,
         video        = document.querySelector('#video'),
@@ -15,9 +17,9 @@
         width = 320,
         height = 0;
     navigator.getMedia = (navigator.getUserMedia ||
-                           navigator.webkitGetUserMedia ||
-                           navigator.mozGetUserMedia ||
-                           navigator.msGetUserMedia);
+                          navigator.webkitGetUserMedia ||
+                          navigator.mozGetUserMedia ||
+                          navigator.msGetUserMedia);
     navigator.getMedia(
       {
           video: true,
@@ -47,17 +49,24 @@
         }
     }, false);
     $scope.takePicture = function(){
+      $scope.sayCheese = true;
       canvas.width = width;
       canvas.height = height;
+      photo.width = width;
+      photo.height = height;
       canvas.getContext('2d').drawImage(video, 0, 0, width, height);
       var data = canvas.toDataURL('image/png');
-        console.log(data);
       $scope.user.pic = data;
       photo.setAttribute('src', data);
-      User.updateProfile($scope.user).then(function(res){
-        toastr.success('Your profile has been saved');
-      });
-      console.log($scope.user);
+    };
+    $scope.savePicture = function(){
+        User.updateProfile($scope.user).then(function(res){
+            toastr.success('Your profile has been saved');
+        });
+        $state.go('profile');
+    };
+    $scope.retake = function(){
+        $scope.sayCheese=false;
     };
   }]);
 })();

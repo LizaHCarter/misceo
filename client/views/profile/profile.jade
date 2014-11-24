@@ -1,4 +1,5 @@
-h2#profileh2 {{mode | uppercase}}
+.section-header.eight.columns.centered
+  h1 {{mode | uppercase}}
 .row
     form(role='form', novalidate, name='editForm')
       .row
@@ -14,8 +15,8 @@ h2#profileh2 {{mode | uppercase}}
                   input(ng-show='editMode' type='text' ng-model='user.name' required)
                 dt Profile Picture
                 dd
-                  img(ng-hide='editMode' src='{{user.pic}}' style='width: 250px')
-                  input(ng-show='editMode' type='text' ng-model='user.pic' required)
+                  img(src='{{user.pic}}' style='width: 250px')
+                  a.button.btn(ng-show='editMode', ng-click='open()') Change Pic
         .small-2.columns
         .small-4.columns
           .panel.panel-info
@@ -37,4 +38,3 @@ h2#profileh2 {{mode | uppercase}}
       button.btn#editButton(style='width: 200px;' ng-hide='editMode', ng-click='startEditMode()') Edit Profile
       button.btn#saveButton(ng-show='editMode', ng-click='updateProfile()') Save
     .small-5.columns
-

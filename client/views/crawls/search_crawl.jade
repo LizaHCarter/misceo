@@ -1,45 +1,50 @@
-h2#Crawlh2 {{mode | uppercase}}
-.row#crawlsRow
-  .small-1.large-1.columns
-  .small-3.large-3.columns#formWrap
-    form(role='form', novalidate, name='crawlForm')
-      h5 Crawl Name:
-      label#nameLabel(for='name')
-        input.form-control#crawlName(type='text', name='name', ng-model='crawl.name', autofocus)
-      h5 Enter URL:
-      .row.collapse
-        .small-3.large-2.columns
-          span.prefix http://
-        .small-9.large-10.columns
-          input#crawlUrl(type='text', placeholder='Enter your URL...')
-      label
-        h5 Select Depth:
-        select
-          option(value='1') 1
-          option(value='2') 2
-          option(value='3') 3
-      button.btn(ng-click='submit()') Crawl the Web
-  .small-1.large-3.columns
-  .small-4.large-3.columns#centerSearch
-    .formgroup#search
-      h5 Search:
-      label
-      input.form-control.search(ng-model='query')
-  .small-3.large-2.columns
+.section-header.eight.columns.centered
+  h1 {{mode | uppercase}}
+// Crawl Form Section
+.panel
+  .row#crawlsRow
+    .twelve.columns
+      form(role='form', novalidate, name='crawlForm')
+        .row
+          .large-4.columns
+            h5 Crawl Name:
+            label#nameLabel(for='name', aria-describedby='nameHelpText')
+              input.form-control#crawlName(type='text', name='name', ng-model='crawl.name', autofocus)
+            #nameHelpText 
+              .helper Give your new baby crawl a name.
+          .large-4.columns
+            h5 Enter URL:
+            label#urlLabel(for='url', aria-describedby='urlHelpText')
+              input#crawlUrl(type='text', placeholder='Enter the full URL...', ng-model='crawl.baseUrl')
+            #urlHelpText
+              .helper Enter the base URL you want to start crawling.
+          .large-4.columns
+            h5 Depth:
+            label#depthLabel(for='depth', aria-describedby='depthHelpText')
+              select(ng-model='crawl.depth')
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+            #depthHelpText 
+              .helper How far down this rabbit hole do you want to go?
+        .row
+          .large-4.large-centered.columns
+            a.btn.btn-secondary.btn-small.btn-raised.text-center(ng-click='submit()') Crawl the Web
+    
+    
+// Saved Crawls Section
 .row
-  .small-1.large-1.columns
-  .small-10.large-10.columns
-    h2#savedCrawls Saved Crawls
-    table
+  .twelve.columns.text-center
+    h3#Crawlh2 Saved Crawls
+.row
+  .twelve.columns
+    table#savedCrawls
       thead
-        th Delete
         th Crawl Name
         th URL Crawled
         th # of Images
       tbody(ng-repeat='crawl in crawls | filter:query')
         tr
-          td(ng-show="crawl.email === email", ng-click='deleteCrawl(crawl._id)') Delete
-          td(ng-click='join=true') {{crawl.name}}
-          td {{crawl.url}}
-          td
-  .small-1.large-1.columns
+          td: a(href='/#/crawl/{{crawl._id}}') {{crawl.name}}
+          td {{crawl.baseUrl}}
+          td {{crawl.imgCount}}

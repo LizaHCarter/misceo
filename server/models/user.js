@@ -29,6 +29,12 @@ UserSchema.statics.authenticate = function(o, cb){
         cb(user);
     }.bind(this));
 };
+
+UserSchema.statics.allUsers = function(cb){
+    this.find({}, function(err, users){
+        cb(err, users);
+    });
+};
 function nameV(v){
     return v.length > 0;
 }

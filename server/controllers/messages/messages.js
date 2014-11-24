@@ -22,3 +22,4 @@ exports.getMessages = function(request, reply){
   });
 };
 
+

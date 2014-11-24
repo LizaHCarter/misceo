@@ -11,10 +11,11 @@
             return $http.get('/messages/'+ messageId);
         }
 
-        function createMessage(message){
+        function newMessage(message){
             return $http.post('/messages', message);
         }
 
-        return{getMessages:getMessages, oneMessage:oneMessage, createMessage:createMessage};
+
+        return{getMessages:getMessages, oneMessage:oneMessage, newMessage:newMessage};
     }]);
 })();
