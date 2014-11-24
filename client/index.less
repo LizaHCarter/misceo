@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
+/* MIXINS */
+
+@MAIN:    #384047;
+@GREEN:   #56BA73;
+@RED:     #CC342B;
+
+//-------Basic Styles-------//
 body {
   font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   height: auto;
@@ -7,7 +14,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato',Helvetica,Arial,sans-serif!important;
-  color: #384047;
+  color: @MAIN;
   font-style: normal;
   line-height: 1.3;
   margin-bottom: 15px;
@@ -16,27 +23,107 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-/* MIXINS */
+h1 {
+  font-size: 54px;
+}
 
-@main: #384047;
-@green: #56BA73;
+h1 small {
+  font-size: 26px;
+}
 
-// @NAVY:    #001F3F;
-// @BLUE:    #0074D9;
-// @AQUA:    #7FDBFF;
-// @TEAL:    #39CCCC;
-// @OLIVE:   #3D9970;
-// @GREEN:   #2ECC40;
-// @LIME:    #01FF70;
-// @YELLOW:  #FFDC00;
-// @ORANGE:  #FF851B;
-@RED:     #FF4136;
-// @MAROON:  #85144B;
-// @FUCHSIA: #F012BE;
-// @PURPLE:  #B10DC9;
-// @BLACK:   #111111;
-// @GRAY:    #AAAAAA;
-// @SILVER:  #DDDDDD;
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: #8c989e;
+  display: block;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+h1 + .subheading, h1 + .subheader {
+  margin-top: -5px;
+}
+
+h1 + .subheading, h1 + .subheader {
+  font-size: 22px;
+}
+
+h1 + .subheading, h1 + .subheader, h2 + .subheading, h2 + .subheader, h3 + .subheading, h3 + .subheader, h4 + .subheading, h4 + .subheader, h5 + .subheading, h5 + .subheader, h6 + .subheading, h6 + .subheader {
+  color: #8c989e;
+  margin-bottom: 13px;
+}
+
+h1 + .subheading, h1 + .subheader, h2 + .subheading, h2 + .subheader, h3 + .subheading, h3 + .subheader, h4 + .subheading, h4 + .subheader, h5 + .subheading, h5 + .subheader, h6 + .subheading, h6 + .subheader, p, ul, ol, dl, blockquote {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+//-------Buttons Style-------//
+.btn-large.btn-raised {
+  padding: 19px 39px 18px;
+}
+
+.btn-primary.btn-raised {
+  border-color: #3ac162;
+}
+
+p + .btn {
+  margin-top: 30px;
+}
+
+.btn-large {
+  font-size: 18px;
+  padding: 20px 40px 19px;
+}
+
+.btn-raised {
+  border-width: 1px 1px 3px;
+  -webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  color: #fff;
+  border-style: solid;
+}
+
+.btn-primary {
+  background-color: @GREEN;
+  border-color: @GREEN;
+}
+
+.btn {
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.btn {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.column, .columns {
+  float: left;
+  min-height: 1px;
+  padding: 0 15px;
+  position: relative;
+}
+
+
 
 //-------Input Style--------//
 
@@ -46,10 +133,11 @@ input.ng-invalid, select.ng-invalid{
 //-------End Input Style-------//
 
 
+
 //-------Home Page Style-------//
 
 header.header {
-  background: @main;
+  background: @MAIN;
   height: 750px;
 }
 .header .header-content h1 {
@@ -76,12 +164,20 @@ header.header {
   background-size: 50%;
   position: relative;
   padding-top: 35px;
-  background: @main;
+  background: @MAIN;
 }
-//-------End Home Page Style-------//
 
+.about {
+  background: #f6f9fa url(/assets/img/bg-pattern.png) left -250px repeat;
+  background-size: 50%;
+  border-top: solid 1px rgba(23, 45, 53, 0.08);
+  border-bottom: solid 1px rgba(23, 45, 53, 0.08);
+  padding-top: 130px;
+  padding-bottom: 140px;
+  text-align: center;
+}
 
-/*===  OUR TEAM SECTION  ===*/
+//-Our Team Section Style-//
 .our-team{
   padding-bottom: 50px;
   padding-top: 50px;
@@ -152,6 +248,10 @@ header.header {
   margin-bottom: 25px;
   text-align: center;
 }
+
+.team-member .social-icons ul {
+  margin-left: 0px!important;
+}
 .team-member .social-icons ul li{
   display: inline-block;
   line-height: 32px;
@@ -166,74 +266,13 @@ header.header {
   text-align: center;
 }
 .team-member .social-icons ul li a:hover{
-  color: @green;
+  color: @GREEN;
 }
-//-------END Our Team Style-------//
+//-END Our Team Style-//
+
+//-------END Home Page Style-------//
 
 
-
-//-------Particles Style-------//
-canvas {
-  // width:2000px;
-  // height:1000px;
-  display:block;
-  vertical-align:bottom;
-  opacity:0.6;
-}
-#particles-js {
-  width:100%;
-  height:100%;
-  background: @green;
-}
-//-------End Particles Style-------//
-
-
-
-//--------Nav Styling--------//
-
-nav.top-bar, .top-bar-section {
-  background: @main;
-}
-#nav {
-  background: @main;
-  height: 70px;
-  z-index: 101;
-  padding: 10px 30px;
-  vertical-align: middle;
-}
-.top-bar-section ul {
-  background: @main;
-}
-.top-bar .name h1 {
-  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
-  width: 100%;
-  text-align: left;
-  background: @main;
-  font-size: 25px;
-  font-weight: 500;
-}
-.top-bar-section li:not(.has-form) a:not(.button) {
-  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: right;
-  background: @main;
-  font-size: 16px;
-  font-weight: 500;
-}
-//--------End Nav Styling--------//
-
-
-
-//--------Footer Styling--------//
-.footer-bottom {
-  background: #384047;
-  color: #fff;
-  text-align: center;
-  padding: 24px 0 10px;
-}
-
-//---------End Footer Styling--------//
 
 
 
@@ -251,7 +290,6 @@ nav.top-bar, .top-bar-section {
 
 
 //--------Crawl Page Styling--------//
-
 #Crawlh2{
   font-family: 'Lato',Helvetica,Arial,sans-serif!important;
   text-align: center;
@@ -264,3 +302,274 @@ nav.top-bar, .top-bar-section {
   font-weight: bold;
 }
 //--------End Crawl Styling--------//
+
+
+
+//--------Nav Styling--------//
+nav.top-bar, .top-bar-section {
+  background: @MAIN;
+}
+#nav {
+  background: @MAIN;
+  height: 70px;
+  z-index: 101;
+  padding: 10px 30px;
+  vertical-align: middle;
+}
+.top-bar-section ul {
+  background: @MAIN;
+}
+.top-bar .name h1 {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+  width: 100%;
+  text-align: left;
+  background: @MAIN;
+  font-size: 25px;
+  font-weight: 500;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+  font-family: 'Lato',Helvetica,Arial,sans-serif!important;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: right;
+  background: @MAIN;
+  font-size: 16px;
+  font-weight: 500;
+}
+//--------End Nav Styling--------//
+
+
+//--------Footer Styling--------//
+
+.footer {
+  margin-top: 0px;
+}
+.footer-bottom {
+  background: #384047;
+  color: #fff;
+  text-align: center;
+  padding: 24px 0 10px;
+}
+
+//---------End Footer Styling--------//
+
+
+
+//--------Row & Column Styling--------//
+.row {
+  width: 1000px;
+  max-width: 100%;
+  min-width: 768px;
+  margin: 0 auto;
+}
+
+.row:before,.row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.row .row {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0 -15px;
+}
+
+.row.collapse .column,.row.collapse .columns {
+  padding: 0;
+}
+
+.row .row {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0 -15px;
+}
+
+.row .row.collapse {
+  margin: 0;
+}
+
+.column,.columns {
+  float: left;
+  min-height: 1px;
+  padding: 0 15px;
+  position: relative;
+}
+
+.column.centered,.columns.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+[class*="column"]+[class*="column"]:last-child {
+  float: right;
+}
+
+[class*="column"]+[class*="column"].end {
+  float: left;
+}
+
+.one,.row .one {
+  width: 8.33333%;
+}
+
+.two,.row .two {
+  width: 16.66667%;
+}
+
+.three,.row .three {
+  width: 25%;
+}
+
+.four,.row .four {
+  width: 33.33333%;
+}
+
+.five,.row .five {
+  width: 41.66667%;
+}
+
+.six,.row .six {
+  width: 50%;
+}
+
+.seven,.row .seven {
+  width: 58.33333%;
+}
+
+.eight,.row .eight {
+  width: 66.66667%;
+}
+
+.nine,.row .nine {
+  width: 75%;
+}
+
+.ten,.row .ten {
+  width: 83.33333%;
+}
+
+.eleven,.row .eleven {
+  width: 91.66667%;
+}
+
+.twelve,.row .twelve {
+  width: 100%;
+}
+
+.row .offset-by-one {
+  margin-left: 8.33333%;
+}
+
+.row .offset-by-two {
+  margin-left: 16.66667%;
+}
+
+.row .offset-by-three {
+  margin-left: 25%;
+}
+
+.row .offset-by-four {
+  margin-left: 33.33333%;
+}
+
+.row .offset-by-five {
+  margin-left: 41.66667%;
+}
+
+.row .offset-by-six {
+  margin-left: 50%;
+}
+
+.row .offset-by-seven {
+  margin-left: 58.33333%;
+}
+
+.row .offset-by-eight {
+  margin-left: 66.66667%;
+}
+
+.row .offset-by-nine {
+  margin-left: 75%;
+}
+
+.row .offset-by-ten {
+  margin-left: 83.33333%;
+}
+
+.push-two {
+  left: 16.66667%;
+}
+
+.pull-two {
+  right: 16.66667%;
+}
+
+.push-three {
+  left: 25%;
+}
+
+.pull-three {
+  right: 25%;
+}
+
+.push-four {
+  left: 33.33333%;
+}
+
+.pull-four {
+  right: 33.33333%;
+}
+
+.push-five {
+  left: 41.66667%;
+}
+
+.pull-five {
+  right: 41.66667%;
+}
+
+.push-six {
+  left: 50%;
+}
+
+.pull-six {
+  right: 50%;
+}
+
+.push-seven {
+  left: 58.33333%;
+}
+
+.pull-seven {
+  right: 58.33333%;
+}
+
+.push-eight {
+  left: 66.66667%;
+}
+
+.pull-eight {
+  right: 66.66667%;
+}
+
+.push-nine {
+  left: 75%;
+}
+
+.pull-nine {
+  right: 75%;
+}
+
+.push-ten {
+  left: 83.33333%;
+}
+
+.pull-ten {
+  right: 83.33333%;
+}

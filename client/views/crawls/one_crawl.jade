@@ -1,4 +1,8 @@
-h2#Crawlh2 {{crawl.name}}
-h3 Starting from {{crawl.baseUrl}} to a depth of {{crawl.depth}}, our crawler found {{crawl.imgCount}} images!
+.row
+  .eight.columns.centered
+    h2#Crawlh2 {{crawl.name}}
+.row
+  .twelve.columns
+    h3 Starting from {{crawl.baseUrl}} to a depth of {{crawl.depth}}, your crawler found {{crawl.imgCount}} images!
 .row#crawlsRow
     img(ng-repeat='image in images', src='{{image.src}}')
