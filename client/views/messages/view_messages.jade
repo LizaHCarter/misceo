@@ -12,7 +12,9 @@ h1#Crawlh2 INBOX
         tr(ng-repeat='message in messages')
           td: a(href='/#/messages/{{message._id}}') {{message.from.name}}
           td: a(href='/#/messages/{{message._id}}') {{message.subject}}
-          td {{message.time | date : format : medium}}
+          td {{message.time | date : formatt: medium}}
+    a(href='/#/newmessage')
+      button Send a message
 
 
 //from.name, subject,body timlarge
