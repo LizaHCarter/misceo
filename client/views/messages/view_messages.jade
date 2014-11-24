@@ -1,7 +1,8 @@
-h1#Crawlh2 INBOX
+.section-header.eight.columns.centered
+  h1 INBOX
 //pre {{messages | json}}
 .row
-  .large-12
+  .large-12.columns
     table#inbox
       thead
         tr
@@ -14,7 +15,5 @@ h1#Crawlh2 INBOX
           td: a(href='/#/messages/{{message._id}}') {{message.subject}}
           td {{message.time | date : formatt: medium}}
     a(href='/#/newmessage')
-      button Send a message
-
-
-//from.name, subject,body timlarge
+      a.btn.btn-secondary.btn-small.btn-raised.text-center Compose Message
+//- from.name, subject,body timlarge

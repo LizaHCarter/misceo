@@ -1,6 +1,9 @@
-h2 {{message.subject}}
-h3 From: {{message.from.name}}
-h4 Sent: {{message.time | date : format : medium}}
-p {{message.body}}
-a(href='/#/newmessage')
-  button Reply
+.section-header.eight.columns.centered
+  h1 View Message
+.panel
+  h2 {{message.subject}}
+  h3 From: {{message.from.name}}
+  h4 Sent: {{message.time | date : format : medium}}
+  p {{message.body}}
+  a(href='/#/newmessage')
+    button Reply
